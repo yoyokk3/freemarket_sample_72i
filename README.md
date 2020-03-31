@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+進藤
+テストの書き込みです。
+
+高木
+てすと。
