@@ -24,8 +24,7 @@ Things you may want to cover:
 * ...
 
 ## テーブルの設計図
-![フリマ ER 図](https://user-images.githubusercontent.com/61731113/78019967-85c2b580-738b-11ea-9fb8-308acf8d10d5.jpeg)
-
+![フリマ ER 図](https://user-images.githubusercontent.com/61731113/78106702-de975a00-742e-11ea-83b5-b5058c17fd3b.jpeg)
 
 ## usersテーブル
 |Column            |Type   |Option                  |
