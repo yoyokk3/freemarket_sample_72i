@@ -34,10 +34,10 @@ Things you may want to cover:
 |last_name         |string |null: false             |
 |email             |string |null: false, default: ""|
 |encrypted_password|string |null: false, default: ""|
-|first_name_reading|string |null: false             |
-|last_name_reading |string |null: false             |
+|first_name_kana   |string |null: false             |
+|last_name_kana    |string |null: false             |
 |nickname          |string |null: false             |
-|mailAddress       |string |null: false             |
+|mail_address       |string |null: false             |
 |birthday_year     |integer|null: false             |
 |birthday_manth    |integer|null: false             |
 |birthday_day      |integer|null: false             |
@@ -54,19 +54,19 @@ Things you may want to cover:
 |------------------|-------|-----------|
 |first_name        |string     |null: false                  |
 |last_name         |string     |null: false                  |
-|first_name_reading|string     |null: false                  |
-|last_name_reading |string     |null: false                  |
+|first_name_kana   |string     |null: false                  |
+|last_name_kana    |string     |null: false                  |
 |postal_code       |integer    |null: false                  |
-|to-do-fu-ken      |string     |null: false                  |
-|si_ku_cho_son     |string     |null: false                  |
-|banti             |string     |null: false                  |
+|prefectures       |string     |null: false                  |
+|municipality      |string     |null: false                  |
+|house_number      |string     |null: false                  |
 |apartment_name    |string     |null: false                  |
 |call_number       |integer    |null: false, unique: true    |
 |user_id           |references |null: false, foreign_key:true|
 
 ### Association
 - belongs_to :user
-- has_one    :product
+- belongs_to :product
 
 ## productsテーブル
 |Column|Type|Option|
@@ -83,8 +83,8 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belongs_to :category
-- belongs_to :brans
-- belongs_to :address
+- belongs_to :brand
+- has_one    :address
 - has_many   :likes
 - has_many   :images
 
