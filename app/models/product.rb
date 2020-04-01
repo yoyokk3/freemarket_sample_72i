@@ -1,5 +1,7 @@
 class Product < ApplicationRecord
 
+  enum status:[:brand_new, :very_good, :good]
+
  belongs_to :user
  belongs_to :category
  belongs_to :brans
