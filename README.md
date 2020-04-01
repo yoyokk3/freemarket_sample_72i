@@ -73,12 +73,14 @@ Things you may want to cover:
 |------|----|------|
 |name       |string    |null: false|
 |price      |integer   |null: false|
-|status     |string    |null: false|
+|status     |integer   |null: false|
 |description|text      |null: false|
 |sending    |integer   |null: false|
 |sendCost   |integer   |null: false|
 |user_id    |references|null: false|
 
+statusはenumで管理
+Productモデルでbrand_new(新品), very_good(良), good(可)とした
 
 ### Association
 - belongs_to :user
