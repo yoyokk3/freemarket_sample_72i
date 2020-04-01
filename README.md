@@ -37,7 +37,8 @@ Things you may want to cover:
 |first_name_kana   |string |null: false             |
 |last_name_kana    |string |null: false             |
 |nickname          |string |null: false             |
-|mail_address       |string |null: false             |
+|iamge             |text   |                        |
+|mail_address      |string |null: false             |
 |birthday_year     |integer|null: false             |
 |birthday_manth    |integer|null: false             |
 |birthday_day      |integer|null: false             |
@@ -46,7 +47,7 @@ Things you may want to cover:
 - has_one  :card
 - has_many :likes
 - has_many :products
-- has_many :images
+- has_many :addresses
 
 
 ## addressesテーブル
@@ -76,8 +77,11 @@ Things you may want to cover:
 |status     |integer   |null: false|
 |description|text      |null: false|
 |sending    |integer   |null: false|
-|sendCost   |integer   |null: false|
+|send_cost  |integer   |null: false|
 |user_id    |references|null: false|
+|category_id|references|null: false|
+|brand_id   |references|null: false|
+
 
 statusはenumで管理
 Productモデルでbrand_new(新品), very_good(良), good(可)とした
@@ -137,7 +141,6 @@ Productモデルでbrand_new(新品), very_good(良), good(可)とした
 |product|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user
 - belongs_to :product
 
 ## likesテーブル

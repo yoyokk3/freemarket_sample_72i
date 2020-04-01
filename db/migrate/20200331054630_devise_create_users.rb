@@ -12,11 +12,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       ##加藤陽が作った、バグるなら多分ここが原因
       t.string  :first_name_kana, null: false
       t.string  :last_name_kana,  null: false
-      t.string  :nickname,           null: false
-      t.string  :mail_address,        null: false
-      t.integer :birthday_year,      null: false
-      t.integer :birthday_manth,    null: false
-      t.integer :birthday_day,       null: false
+      t.string  :nickname,        null: false
+      t.text    :image
+      t.string  :mail_address,    null: false
+      t.integer :birthday_year,   null: false
+      t.integer :birthday_manth,  null: false
+      t.integer :birthday_day,    null: false
 
       ## Recoverable
       t.string   :reset_password_token
