@@ -10,10 +10,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :encrypted_password,  null: false, default: ""
 
       ##加藤陽が作った、バグるなら多分ここが原因
-      t.string  :first_name_reading, null: false
-      t.string  :last_name_reading,  null: false
+      t.string  :first_name_kana, null: false
+      t.string  :last_name_kana,  null: false
       t.string  :nickname,           null: false
-      t.string  :mailAddress,        null: false
+      t.string  :mail_address,        null: false
       t.integer :birthday_year,      null: false
       t.integer :birthday_manth,    null: false
       t.integer :birthday_day,       null: false
