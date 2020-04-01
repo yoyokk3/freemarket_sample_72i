@@ -6,8 +6,10 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer    :status,       null: false, default: 0
       t.text       :description,  null: false
       t.integer    :sending,      null: false
-      t.integer    :sendCost,     null: false
+      t.integer    :send_cost,    null: false
       t.references :user,         null: false, foreign_key: true
+      t.references :category,     null: false, foreign_key: true
+      t.references :brand,        null: false, foreign_key: true
       t.timestamps
     end
   end
