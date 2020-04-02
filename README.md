@@ -136,7 +136,6 @@ Productモデルでbrand_new(新品), very_good(良), good(可)とした
 |Column |Type      |Options                       |
 |-------|----------|                              |
 |image  |text      |null: false                   |
-|user_id|references|null: false, foreign_key: true|
 |product|references|null: false, foreign_key: true|
 
 ### Association
