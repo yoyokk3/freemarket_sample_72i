@@ -1,17 +1,15 @@
-.Mypage__header
-  Renderしてくる、またはapplicationファイル上に組み込む
-
 
 .mypagebox
   .mypagebox__leftcolumn
     .mypagebox__leftcolumn--mypage マイページ
     .mypagebox__leftcolumn--cardreg カード登録/変更
-    .mypagebox__leftcolumn--logout ログアウト
+    .mypagebox__leftcolumn--logout
+      = link_to "ログアウト", destroy_user_session_path, method: :delete
   .mypagebox__rightbox
     .mypagebox__rightbox--namebox 
       .mypagebox__rightbox--name ユーザーネーム
-    %ul.mypagebox__rightbox--center
-      %li.mypagebox__rightbox--notification お知らせ
-      %li.mypagebox__rightbox--Todo やることリスト
+    .mypagebox__rightbox--center
+      .mypagebox__rightbox--notification お知らせ
+      .mypagebox__rightbox--Todo やることリスト
     .mypagebox__rightbox--message 
     .mypagebox__rightbox--index 一覧を見る
