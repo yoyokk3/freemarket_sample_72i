@@ -31,7 +31,20 @@
       height: 30px;
       border-style: ridge;
       padding: 12px; 
+      line-height: 30px;
+      text-decoration: none;
+      a {
+        width: 280px;
+        height: 30px;
+        display: block;
+        text-decoration: none;
+        color: black;
+      }
+      a:hover {
+        color: orange;
+      }
     }
+  }
   }
   .mypagebox__rightbox {
     width: 600px;
@@ -94,6 +107,5 @@
       line-height: 50px;
     }
   }
-}
 
 
