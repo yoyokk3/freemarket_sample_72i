@@ -83,3 +83,6 @@ group :development, :test do
   gem 'devise-i18n'
   gem 'devise-i18n-views'
 end
+
+gem 'payjp'
+gem "jquery-rails"
