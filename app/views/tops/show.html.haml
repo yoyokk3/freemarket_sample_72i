@@ -28,11 +28,11 @@
             %tr
               %th カテゴリー
               %td
-                %a{href: '#'} 動物
+                = link_to '動物', '#'
                 %br
-                %a{href: '#'} 可愛い
+                = link_to '可愛い', '#'
                 %br
-                %a{href: '#'} レディース
+                = link_to 'レディース', '#'
                 %br
             %tr
               %th 商品のサイズ
@@ -49,7 +49,7 @@
             %tr
               %th 発送元の地域
               %td
-                %a{href: '#'}埼玉県
+                = link_to '埼玉県', '#'
             %tr
               %th 発送日の目安
               %td 即日発送
@@ -60,7 +60,7 @@
               お気に入り
           %ul
             %li.optional
-              %a{href: '#'}
+              = link_to '#' do
                 %i.fa.fa-flag
                 不適切な商品の通報
       .commentBox
@@ -76,16 +76,16 @@
             コメントする
     %ul.links
       %li
-        %a{href: '#'}
-          %i.fa.fa-angle-left
+        = link_to '#' do
+          %i.fa.fa-flag
           前の商品
       %li
-        %a{href: '#'}
+        = link_to '#' do
           後ろの商品
           %i.fa.fa-angle-right
     .relatedItems
-      %a{href: '#'}
-        レディースをもっと見る
+      = link_to 'レディースをもっと見る', '#'
+        
 
 
 
