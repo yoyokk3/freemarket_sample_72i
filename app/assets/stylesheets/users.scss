@@ -1,0 +1,111 @@
+.Mypage__header {
+  width: 100vw;
+  height: 150px;
+  background-color: black;
+}
+
+.mypagebox {
+  width: 100vw;
+  height: calc(100vh - 150px);
+  background-color:white;
+  display: flex;
+  // text-align: center;
+  &__leftcolumn {
+    margin-top: 50px;
+    margin-left: 150px;
+    &--mypage {
+      width: 280px;
+      height: 30px;
+      border-style: ridge;
+      padding: 12px;
+      vertical-align: middle;
+    }
+    &--cardreg {
+      width: 280px;
+      height: 30px;
+      border-style: ridge;
+      padding: 12px; 
+    }
+    &--logout {
+      width: 280px;
+      height: 30px;
+      border-style: ridge;
+      padding: 12px; 
+      line-height: 30px;
+      text-decoration: none;
+      a {
+        width: 280px;
+        height: 30px;
+        display: block;
+        text-decoration: none;
+        color: black;
+      }
+      a:hover {
+        color: orange;
+      }
+    }
+  }
+  }
+  .mypagebox__rightbox {
+    width: 600px;
+    height: 500px;
+    // background-color: #FFFFAA;
+    margin-top: 50px;
+    margin-left: 150px;
+    display: flex;
+    position: relative;
+    border-style: ridge;
+    text-align: center;
+    &--namebox {
+      height: 100px;
+      width: 600px;
+      background-color: white;
+      text-align: center;
+      position: absolute;
+      margin-top: 0px;
+      border-bottom: ridge;
+    }
+      &--name {
+        background-color: white;
+        margin-top: 40px;
+      }
+    &--notification {
+      // position: absolute;
+      margin-top: 100px;
+      // margin-right: 0px;
+      // background-color: greenyellow;
+      height: 50px;
+      width: 300px;
+      line-height: 50px;
+      border-bottom: ridge;
+      border-right: ridge;
+      // vertical-align: middle;
+      // display: inline-block;
+    }
+    &--Todo {
+      // background-color: grey;
+      height: 49px;
+      width: 300px;
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      top: 101px;
+      line-height: 50px;
+      border-bottom: ridge;
+    }
+    &--message {
+
+    }
+    &--index {
+      background-color:white;
+      width: 600px;
+      position: absolute;
+      height: 50px;
+      bottom: 0;
+      display: inline-block;
+      border-top: ridge;
+      line-height: 50px;
+    }
+  }
+
+
