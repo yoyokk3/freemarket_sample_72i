@@ -80,4 +80,6 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'devise-i18n'
+  gem 'devise-i18n-views'
 end
