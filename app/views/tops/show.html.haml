@@ -1,0 +1,93 @@
+%section.showMain
+  .showMain__content
+    .topContent
+      .itemBox
+        .itemBox__name カレーライス
+        .itemBox__image
+          %ul
+            %li.itemBox__image__main
+              = image_tag 'top/birdCute.jpeg', alt: 'BirdCute', class: 'itemBox__image__main1'
+              %ul.itemBox__image__main__sub
+                %li
+                  = image_tag 'top/catCute.jpeg', alt: 'CatCute'
+                %li
+                  = image_tag 'top/dogCute.jpeg', alt: 'DogCute'
+                %li
+                  = image_tag 'top/rabbitCute.jpeg', alt: 'RabbitCute'
+        .itemBox__price
+          .itemBox__price--num 1000円
+          .itemBox__price--detail
+            %span (税込)
+            %span 送料込み
+        .itemDetail 犬と猫と鳥とウサギです。家の方針で飼えなくなりました。引き取っていただけませんか。お金入りません。名前はカレーライスです。カレノスケ呼ぶと喜びます。
+        .table
+          %table
+            %tr 
+              %th 出品者
+              %td 加藤陽
+            %tr
+              %th カテゴリー
+              %td
+                %a{href: '#'} 動物
+                %br
+                %a{href: '#'} 可愛い
+                %br
+                %a{href: '#'} レディース
+                %br
+            %tr
+              %th 商品のサイズ
+              %td S
+            %tr
+              %th ブランド
+              %td
+            %tr
+              %th 商品の状態
+              %td 可愛い
+            %tr
+              %th 配送料の負担
+              %td 送料込み(出品者負担)
+            %tr
+              %th 発送元の地域
+              %td
+                %a{href: '#'}埼玉県
+            %tr
+              %th 発送日の目安
+              %td 即日発送
+        .optionalArea
+          %ul
+            %li#likeBtn.optionalBtn.likeBtn
+              %i.fas.fa-star
+              お気に入り
+          %ul
+            %li.optional
+              %a{href: '#'}
+                %i.fa.fa-flag
+                不適切な商品の通報
+      .commentBox
+        %form#new_comment.new_comment{"accept-charaset" => "UTF-8", action: "#", method: "post"}
+          %textarea#comment_body{name: 'comment[body]', required: 'required'}
+          %p.noticeMsg
+            相手のことを考え丁寧なコメントを心がけましょう
+            %br
+            不快な言葉などは利用制限や退会処分となることがあります
+          %br
+          %button.commitBtn{name: 'button', type: 'submit'}
+            %i.fa.fa-comment
+            コメントする
+    %ul.links
+      %li
+        %a{href: '#'}
+          %i.fa.fa-angle-left
+          前の商品
+      %li
+        %a{href: '#'}
+          後ろの商品
+          %i.fa.fa-angle-right
+    .relatedItems
+      %a{href: '#'}
+        レディースをもっと見る
+
+
+
+
+
