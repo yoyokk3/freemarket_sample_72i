@@ -1,0 +1,33 @@
+@mixin box {
+  height: 44px;
+  width: 100%;
+  margin: 20px 4px;
+  display: flex;
+}
+
+@mixin logo {
+  height: 37px;
+  width: 30%;
+  padding: 0 4px;
+  margin: 10px 0;
+  display: flex;
+}
+
+@mixin fix {
+  color: #212121;
+  font-size: 15px;
+  padding: 7px 0 0 ;   
+}
+
+@mixin must {
+  color: #FA4141;
+  font-size: 14px;
+  margin: 10px 0 0 8px;
+}
+
+@mixin text {
+  width: calc(100%-30%);
+  margin: 10px 0 8px;
+  padding: 6px 12px;
+}
+

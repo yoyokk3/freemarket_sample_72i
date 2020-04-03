@@ -1,0 +1,109 @@
+-# .header
+  
+-#   .header__box
+-#     = link_to image_tag(src= "second/logo-d3furima.svg", class: "header__box__logo"),"#"
+-#     .header__box__text
+-#       商品出品ページ
+  
+.main
+  .main__box
+    .main__box__image1
+      = image_tag src= "second/icon_camera.png", size:"229x229"
+    .main__box__image2
+      = image_tag src= "second/icon_camera.png", size:"229x229"
+    .main__box__image3
+      = image_tag src= "second/icon_camera.png", size:"229x229"
+    .main__box__image4
+      = image_tag src= "second/icon_camera.png", size:"229x229"
+  .main__form
+    .main__form__name
+      .main__form__name__logo
+        .main__form__name__logo__fix
+          商品名
+        .main__form__name__logo__must
+          *必須
+      .main__form__name__text
+        %form#buy_product.buy_product{"accept-charaset" => "UTF-8", action: "#", method: "post"}
+          %input(type="text" placeholder="40文字まで")/
+    .main__form__description
+      .main__form__description__logo
+        .main__form__description__logo__fix
+          商品説明
+        .main__form__description__logo__must
+          *必須
+      .main__form__description__text
+        %form#buy_product.buy_product{"accept-charaset" => "UTF-8", action: "#", method: "post"}
+          %textarea(name="text" cols="67" rows="15" maxlength="1000" placeholder="色・素材・重さ・低下・注意点などを記載しましょう（１０００文字まで）例：先月に５４００円で購入したセーターです。着用回数は５回未満です。素材はカシミヤなので着心地がいいです。")
+        -# %input(type="textarea" cols="70"rows="6" maxlength="1000" placeholder="色・素材・重さ・低下・注意点などを記載しましょう（１０００文字まで）例：先月に５４００円で購入したセーターです。着用回数は５回未満です。素材はカシミヤなので着心地がいいです。）")/
+    .main__form__category
+      .main__form__category__logo
+        .main__form__category__logo__fix
+          カテゴリー
+        .main__form__category__logo__must
+          *必須
+      .main__form__category__text
+        %form#buy_product.buy_product{"accept-charaset" => "UTF-8", action: "#", method: "post"}
+          %input(type="text"placeholder="指定なし")/
+    .main__form__brand
+      .main__form__brand__logo
+        .main__form__brand__logo__fix
+          ブランド
+        
+      .main__form__brand__text
+        %form#buy_product.buy_product{"accept-charaset" => "UTF-8", action: "#", method: "post"}
+          %input(type="text"placeholder="指定なし")/  
+    .main__form__status
+      .main__form__status__logo
+        .main__form__status__logo__fix
+          商品の状態
+        .main__form__status__logo__must
+          *必須
+      .main__form__status__text
+        %form#buy_product.buy_product{"accept-charaset" => "UTF-8", action: "#", method: "post"}
+          %input(type="text"placeholder="新品、未使用" )/
+    .main__form__sendcost
+      .main__form__sendcost__logo
+        .main__form__sendcost__logo__fix
+          配送料の負担
+        .main__form__sendcost__logo__must
+          *必須
+      .main__form__sendcost__text
+        %form#buy_product.buy_product{"accept-charaset" => "UTF-8", action: "#", method: "post"}
+          %input(type="text"placeholder="送料込み（出品者が負担）")/
+    .main__form__sending
+      .main__form__sending__logo
+        .main__form__sending__logo__fix
+          配送方法
+        
+      .main__form__sending__text
+        %form#buy_product.buy_product{"accept-charaset" => "UTF-8", action: "#", method: "post"}
+          %input(type="text"placeholder="未定")/
+    .main__form__date
+      .main__form__date__logo
+        .main__form__date__logo__fix
+          発送日の目安
+        .main__form__date__logo__must
+          *必須
+      .main__form__date__text
+        %form#buy_product.buy_product{"accept-charaset" => "UTF-8", action: "#", method: "post"}
+          %input(type="text"placeholder="支払い後、１〜２日目安で発送")/
+    .main__form__price
+      .main__form__price__logo
+        .main__form__price__logo__fix
+          商品価格
+        .main__form__price__logo__must
+          *必須
+      .main__form__price__text
+        %form#buy_product.buy_product{"accept-charaset" => "UTF-8", action: "#", method: "post"}
+          %input(type="text"placeholder="¥300~¥2,000,000")/
+    .main__form__btn
+      %form#buy_product.buy_product{"accept-charaset" => "UTF-8", action: "#", method: "post"}
+        %button.decisionBtn{name: 'button', type: 'submit'}
+          出品する
+
+    -# .main__form__my
+    -#   .main__form__my__page
+  .wrapper
+    - @contents.each do|c|
+      .wrapper__content-title
+        = c
