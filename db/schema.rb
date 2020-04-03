@@ -93,7 +93,6 @@ ActiveRecord::Schema.define(version: 2020_04_01_093407) do
     t.string "last_name_kana", null: false
     t.string "nickname", null: false
     t.text "image"
-    t.string "mail_address", null: false
     t.integer "birthday_year", null: false
     t.integer "birthday_manth", null: false
     t.integer "birthday_day", null: false
