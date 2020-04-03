@@ -1,0 +1,167 @@
+body{
+  background-color: #f8f8f8;
+  .showMain{
+    width: 100%;
+    padding: 40px;
+    &__content{
+      width: 700px;
+      margin: 0 auto;
+      .topContent{
+        margin: 0;
+        padding: 0;
+      }
+      .itemBox{
+        background-color: #fff;
+        padding: 24px 40px 40px;
+        &__name{
+          text-align: center;
+          font-weight: bold;
+          font-size: 24px;
+        }
+        &__image{
+          margin: 16px 0px 0px;
+            &__main{
+              display: flex;
+              flex-direction: column;
+              .itemBox__image__main1{
+                object-fit: cover;
+                height: 346px;
+              }
+              &__sub{
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+                li{
+                  width: 25%;
+                  margin-right: 10px;
+                  img{
+                    object-fit: cover;
+                    height: 93px;
+                    width: 155px;
+                  }
+                }
+              }
+            }
+        }
+        &__price{
+          margin: 24px 0px 24px;
+          text-align: center;
+          /* display: flex; */
+          /* flex-direction: column; */
+          &--num{
+            font-size: 46px;
+            font-weight: bold;
+            margin: 0 10px 0 0;
+          }
+          &--detail{
+            font-size: 16px;
+          }
+        }
+        .itemDetail{
+          line-height: 1.5;
+          font-size: 18px;
+          margin-bottom: 30px;
+        }
+        table{
+          width: 100%;
+          margin-bottom: 20px;
+          border: 1px solid #f8f8f8;
+          th{
+            background-color: #eee;
+            border: 1px solid #dedede;
+            text-align: center;
+            width: 20%;
+            font-size: 14px;
+            font-weight: 400;
+            padding: 8px;
+          }
+          td{
+            width: 60%;
+            padding: 15px;
+            border: solid 1px #dedede;
+            font-size: 14px;
+            a{
+              text-decoration: none;
+              color: #3CCACE;
+            }
+          }
+        }
+      }
+      .optionalArea{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        #likeBtn{
+          color: #3CCACE;
+          border: 1px solid #ffb340;
+          padding: 6px 10px;
+          border-radius: 40px;
+        }
+        .optional{
+          font-size: 14px;
+          a{
+            text-decoration: none;
+            border: solid 1px #333;
+            border-radius: 4px;
+            display: inline-block;
+            padding: 6px 10px;
+            color: #333;
+          }
+        }
+        .optionalBtn:hover{
+          cursor: pointer;
+        }
+      }
+      .commentBox{
+        padding: 24px;
+        background-color: #fff;
+        margin: 10px 0;
+        text-align: center;
+        #comment_body{
+          width: 96%;
+          min-height: 104px;
+          padding: 10px;
+        }
+        p{
+          padding: 8px;
+          font-size: 14px;
+          background-color: #f8f8f8;
+          margin: 10px 0;
+          text-align: left;
+        }
+        .commitBtn{
+          line-height: 48px;
+          background: #3CCACE;
+          border: 1px solid #3CCACE;
+          color: #fff;
+          width: 60%;
+          font-size: 18px;
+          border-radius: 100px;
+        }
+        .commitBtn:hover{
+          cursor: pointer;
+        }
+      }
+      .links{
+        display: flex;
+        justify-content: space-between;
+        a{
+          text-decoration: none;
+          color: #3CCACE;
+        }
+      }
+      .relatedItems{
+        margin-top: 20px;
+        margin-bottom: 15px;
+        font-size: 22px;
+        font-weight: bold;
+        color: #3CCACE;
+        a{
+          text-decoration: none;
+          color: #3CCACE;
+        }
+      }
+    }
+  }
+}
+
