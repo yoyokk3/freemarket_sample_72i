@@ -5,8 +5,7 @@
 .first{
   width: 100%;
   height: 560px;
-  background-size:auto;
-  background-image: url(/assets/top/bg-mainVisual-pict_pc.jpg);
+  background-image: url(/assets/top/pexels-photo-336948.jpeg);
   &__title{
     font-size: 60px;
     font-weight: bold;
@@ -36,18 +35,6 @@
   }
  }
 
- @mixin number{
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 40px;
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  text-align: center;
-  color: white;
-  background-color: #3CCACE;
-}
-
  .second{
    height: 500px;
    padding: 60px 60px;
@@ -75,7 +62,14 @@
         position: relative;
         background-color: lightgreen;
         &__number{
-          @include number
+         font-size: 20px;
+         font-weight: bold;
+         line-height: 40px;
+         width: 40px;
+         height: 40px;
+         position: absolute;
+         text-align: center;
+         background-color: lightskyblue;
         }
       }
       &__text{
@@ -85,7 +79,7 @@
         margin-top: 15px;
         text-align: center;
         span{
-          color: #3CCACE;
+          color: lightskyblue;
         }
       } 
       &__about{
@@ -103,7 +97,14 @@
         position: relative;
         background-color: lightgreen;
         &__number{
-          @include number
+         font-size: 20px;
+         font-weight: bold;
+         line-height: 40px;
+         width: 40px;
+         height: 40px;
+         position: absolute;
+         text-align: center;
+         background-color: lightskyblue;
         }
       }
       &__text{
@@ -113,7 +114,7 @@
         margin-top: 15px;
         text-align: center;
         span{
-          color: #3CCACE;
+          color: lightskyblue;
         }
       } 
       &__about{
@@ -129,8 +130,16 @@
       &__image{
         width: 100%;
         position: relative;
+        background-color: lightgreen;
         &__number{
-          @include number
+         font-size: 20px;
+         font-weight: bold;
+         line-height: 40px;
+         width: 40px;
+         height: 40px;
+         position: absolute;
+         text-align: center;
+         background-color: lightskyblue;
         }
       }
       &__text{
@@ -140,7 +149,7 @@
         margin-top: 15px;
         text-align: center;
         span{
-          color: #3CCACE;
+          color: lightskyblue;
         }
       } 
       &__about{
@@ -151,13 +160,11 @@
    }
  }
 
-
  .third{
   width: 100%;
   height: 450px;
-  background-size:cover;
-  background-position: bottom right;
-  background-image: url(/assets/top/bg-topMiddleDl-pict.jpg);
+  background-size: cover;
+  background-image: url(/assets/top/third.jpeg);
   &__title{
     font-size: 30px;
     font-weight: bold;
