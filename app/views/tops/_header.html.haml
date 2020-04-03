@@ -1,7 +1,7 @@
 .header
   .header__contents
     .header__contents__main
-      = link_to image_tag(src= "header/logo.svg", class: ".header__contents__main__logo"),root_path
+      = link_to image_tag(src= "header/logo.svg", class: ".header__contents__main__logo"),"#"
       = form_with(url: "#", local: true, method: :get, class: ".header__contents__main__form") do |form|
         = form.text_field :keyword, placeholder: "キーワードから探す", class: ".header__contents__main__form__text"
         = button_tag type: 'submit', class: "follow-btn" do
@@ -11,5 +11,5 @@
         = link_to 'カテゴリー', "#", class: ".header__contents__nav__left__category"
         = link_to 'ブランド', "#", class: ".header__contents__nav__left__brand"
       .header__contents__nav__right
-        = link_to 'ログイン', new_user_session_path, class: ".header__contents__nav__right__logIn"
-        = link_to '新規会員登録', new_user_registration_path, class: ".header__contents__nav__right__signUp"
+        = link_to 'ログイン', "#", class: ".header__contents__nav__right__logIn"
+        = link_to '新規会員登録', "#", class: ".header__contents__nav__right__signUp"
