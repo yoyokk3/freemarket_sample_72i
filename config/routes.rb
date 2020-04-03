@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'tops#index'
   resources :tops
+  resources :users
+  resources :purchases
 
   resources :card, only: [:new, :show] do
     collection do
@@ -14,5 +16,4 @@ Rails.application.routes.draw do
       post 'delete', to: 'card#delete'
     end
   end
-  
 end
