@@ -41,6 +41,7 @@
         margin: 0 0 40px;
         font-size: 17px;
         font-weight: 200;
+        margin: 0 10px;
         text-align: left;
       }
     }
@@ -161,19 +162,24 @@
 
 }
 .sixth{
-  height: 359px;
+  height: 250px;
   width: 100%;
-  background-image: url(/assets/second/image2.jpg);
-  padding: 100px 40px;
+  background-size: cover;
+  
+  background-image: url(/assets/second/bg-appBanner-pict.jpg);
+  padding:60px 0px;
   position: relative;
   background-size: cover;
   background-position: center;
   &__body{
     color: white;
     text-align: center;
+    margin: 0 auto;
+    padding: 40px 0;
     &__title{
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
       font-size: 24px;
+      margin-bottom: 10px;
       font-weight: bold;
       line-height: 1.4;
     }
@@ -187,14 +193,16 @@
       justify-content: center;
       margin: 20px auto 0;
       &__left{
-        margin-right: 10px;
+        margin-right: 30px;
         width: 180px;
         height: auto;
       }
       &__right{
-        margin: 10px;
         width: 180px;
         height: auto;
+      }
+      img:hover {
+        opacity: 0.5 ;
       }
     }
   }
