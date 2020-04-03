@@ -1,9 +1,9 @@
 .mypagebox
   .mypagebox__leftcolumn
     .mypagebox__leftcolumn--mypage マイページ
-    .mypagebox__leftcolumn--cardreg カード登録/変更
-    .mypagebox__leftcolumn--logout
-      = link_to "ログアウト", 'logout'
+    .mypagebox__leftcolumn--cardreg
+      = link_to "カード登録/変更", 'card/new'
+
   .logoutbox
     .logoutbox__text
       = link_to "ログアウト", destroy_user_session_path, method: :delete
