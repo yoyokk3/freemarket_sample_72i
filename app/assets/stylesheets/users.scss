@@ -7,7 +7,7 @@
 .mypagebox {
   width: 100vw;
   height: calc(100vh - 150px);
-  background-color:#f3f3f3;
+  background-color:white;
   display: flex;
   // text-align: center;
   &__leftcolumn {
@@ -18,26 +18,21 @@
       height: 30px;
       border-style: ridge;
       padding: 12px;
-      line-height: 30px;
-      background-color: white;
+      vertical-align: middle;
     }
     &--cardreg {
       width: 280px;
       height: 30px;
       border-style: ridge;
       padding: 12px; 
-      line-height: 30px;
-      background-color: white;
     }
     &--logout {
-      background-color: white;
       width: 280px;
       height: 30px;
       border-style: ridge;
       padding: 12px; 
       line-height: 30px;
       text-decoration: none;
-      line-height: 30px;
       a {
         width: 280px;
         height: 30px;
@@ -50,7 +45,7 @@
       }
     }
   }
-
+  }
   .mypagebox__rightbox {
     width: 600px;
     height: 500px;
@@ -112,26 +107,5 @@
       line-height: 50px;
     }
   }
-  .logoutbox {
-    height: 200px;
-    width: 700px;
-    border: ridge;
-    margin-top: 50px;
-    margin-left: 50px;
-    background-color: white;
-    &__text {
-      line-height: 200px;
-      text-align: center;
-      a {
-        font-size: x-large;
-        font-weight: bold;
-        text-decoration: none;
-        color: white;
-        background-color: red;
-        padding: 20px;
-      }
-    }
-  }
-}
 
 
