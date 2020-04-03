@@ -3,7 +3,6 @@
   height: calc(100vh - 150px);
   background-color:white;
   display: flex;
-  // text-align: center;
   &__leftcolumn {
     margin-top: 50px;
     margin-left: 150px;
@@ -20,7 +19,14 @@
       height: 30px;
       border-style: ridge;
       padding: 12px; 
-      line-height: 30px;
+        a{
+          text-decoration: none;
+          line-height: 30px;
+          color: black;
+        }
+        a:hover {
+          color: orange;
+        }
     }
     &--logout {
       width: 280px;
@@ -45,7 +51,6 @@
   .mypagebox__rightbox {
     width: 600px;
     height: 500px;
-    // background-color: #FFFFAA;
     margin-top: 50px;
     margin-left: 150px;
     display: flex;
@@ -66,20 +71,14 @@
         margin-top: 40px;
       }
     &--notification {
-      // position: absolute;
       margin-top: 100px;
-      // margin-right: 0px;
-      // background-color: greenyellow;
       height: 50px;
       width: 300px;
       line-height: 50px;
       border-bottom: ridge;
       border-right: ridge;
-      // vertical-align: middle;
-      // display: inline-block;
     }
     &--Todo {
-      // background-color: grey;
       height: 49px;
       width: 300px;
       display: inline-block;
