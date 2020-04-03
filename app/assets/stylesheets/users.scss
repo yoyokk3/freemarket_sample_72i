@@ -113,13 +113,15 @@
       &__text {
         line-height: 200px;
         text-align: center;
+        padding-left: 50px;
+        padding-right: 50px;
         a {
           font-size: x-large;
           font-weight: bold;
           text-decoration: none;
           color: white;
           background-color: red;
-          padding: 20px;
+          padding: 10px 50px;
         }
       }
     }
