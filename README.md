@@ -107,9 +107,9 @@ Productモデルでbrand_new(新品), very_good(良), good(可)とした
 
 ## brandsテーブル
 
-|Column    |Type  |Options|
-|----------|------||
-|brand_name|string||
+|Column|Type|Options|
+|------|----|-------|
+|brand_name|string|       |
 
 ### Association
 - has_many :products
