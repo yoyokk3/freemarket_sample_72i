@@ -1,0 +1,137 @@
+body{
+  background-color: #f8f8f8;
+  .buyMain{
+    width: 100%;
+    padding: 40px;
+    &__content{
+      width: 700px;
+      margin: 0 auto;
+      .productInfo{
+        background-color: #fff;
+        padding: 24px 40px 40px;
+        li{
+          display:flex;
+          img{
+            object-fit: cover;
+            height: 80px;
+            width: 80px;
+          }
+          .productInfo__detail{
+            margin-left: 15px;
+            &__name{
+
+            }
+            &__price{
+              color: #757575;
+            }
+            &__sendCost{
+              color: #777777;
+              background: #E5E5E5;
+              border: solid 1px #E5E5E5;
+              border-radius: 10px;
+              padding: 2px 5px;
+            }
+          }
+        }
+      }
+      .payInfo{
+        background-color: #fff;
+        padding: 24px 40px 40px;
+        margin-top: 15px;
+        .row{
+          color: #757575;
+          font-size: 15px;
+        }
+        table{
+          width: 100%;
+          margin-bottom: 20px;
+          border: 1px solid #f8f8f8;
+          th{
+            background-color: #eee;
+            border: 1px solid #dedede;
+            text-align: center;
+            width: 20%;
+            font-size: 14px;
+            font-weight: 400;
+            padding: 8px;
+          }
+          td{
+            width: 60%;
+            padding: 15px;
+            border: solid 1px #dedede;
+            font-size: 14px;
+          }
+        }
+        .paymentInfo{
+          .row2{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 15px;
+            color: #757575;
+          }
+          .row3{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 15px;
+            color: #757575;
+          }
+          .row4{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 20px;
+          }
+        }
+      }
+      .sendingInfo{
+        background-color: #fff;
+        padding: 24px 40px 40px;
+        margin-top: 15px;
+        .col4{
+          color: #757575;
+          font-size: 15px;
+        }
+        .col5{
+          padding-top: 10px;
+        }
+        .row{
+          color: #757575;
+          font-size: 15px;
+          margin-top: 15px;
+        }
+        .col6{
+          padding-top: 10px;
+          display: flex;
+          flex-direction: column;
+          .sendingCost{
+            span{
+              color: #777777;
+              background: #E5E5E5;
+              border: solid 1px #E5E5E5;
+              border-radius: 8px;
+              padding: 2px 5px;
+            }
+          }
+        }
+      }
+      .formInfo{
+        margin-top: 20px;
+        text-align: center;
+        .decisionBtn{
+          line-height: 40px;
+          background: rgba(214, 80, 46, 0.651);
+          border: 1px solid rgba(214, 80, 46, 0.651);
+          color: #fff;
+          width: 30%;
+          font-size: 20px;
+          border-radius: 10px;
+        }
+        .decisionBtn:hover{
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
