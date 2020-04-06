@@ -35,26 +35,155 @@
     justify-content: space-around;
     display: flex;
     align-items: center;
-    // &__image1{
-    //   height: 229px;
-    //   width: 229px;
-    //   padding: 8px;
-    // }
-    // &__image2{
-    //   height: 229px;
-    //   width: 229px;
-    //   padding: 8px;
-    // }
-    // &__image3{
-    //   height: 229px;
-    //   width: 229px;
-    //   padding: 8px;
-    // }
-    // &__image4{
-    //   height: 229px;
-    //   width: 229px;
-    //   padding: 8px;
-    // }
+    &__image1{
+      height: 229px;
+      width: 229px;
+      padding: 8px;
+      #abc{
+        height: 229px;
+        width: 229px;
+      }
+      .image1__preview{
+        overflow: hidden;
+        height: 229px;
+        width: 229px;
+        position: relative;
+        border: 1px solid #ccc;
+        .form--image10{
+          max-width: 100%;
+          height: auto;
+          input{
+            display: none;
+          }
+          img{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: auto;
+            width: auto;
+            margin: auto;
+            max-width: 100%;
+            max-height: 100%;
+            cursor: pointer;
+          }
+        }
+        
+      }
+      
+    }
+    &__image2{
+      height: 229px;
+      width: 229px;
+      padding: 8px;
+      #abc{
+        height: 229px;
+        width: 229px;
+      }
+      .image1__preview{
+        overflow: hidden;
+        height: 229px;
+        width: 229px;
+        position: relative;
+        border: 1px solid #ccc;
+        .form--image10{
+          max-width: 100%;
+          height: auto;
+          input{
+            display: none;
+          }
+          img{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: auto;
+            width: auto;
+            margin: auto;
+            max-width: 100%;
+            max-height: 100%;
+            cursor: pointer;
+          }
+        }
+        
+      }
+    }
+    &__image3{
+      height: 229px;
+      width: 229px;
+      padding: 8px;
+      #abc{
+        height: 229px;
+        width: 229px;
+      }
+      .image1__preview{
+        overflow: hidden;
+        height: 229px;
+        width: 229px;
+        position: relative;
+        border: 1px solid #ccc;
+        .form--image10{
+          max-width: 100%;
+          height: auto;
+          input{
+            display: none;
+          }
+          img{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: auto;
+            width: auto;
+            margin: auto;
+            max-width: 100%;
+            max-height: 100%;
+            cursor: pointer;
+          }
+        }
+        
+      }
+    }
+    &__image4{
+      height: 229px;
+      width: 229px;
+      padding: 8px;
+      #abc{
+        height: 229px;
+        width: 229px;
+      }
+      .image1__preview{
+        overflow: hidden;
+        height: 229px;
+        width: 229px;
+        position: relative;
+        border: 1px solid #ccc;
+        .form--image10{
+          max-width: 100%;
+          height: auto;
+          input{
+            display: none;
+          }
+          img{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: auto;
+            width: auto;
+            margin: auto;
+            max-width: 100%;
+            max-height: 100%;
+            cursor: pointer;
+          }
+        }
+        
+      }
+    }
   }
   &__form{
     float: right;
