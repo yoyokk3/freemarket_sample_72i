@@ -37,7 +37,6 @@ Things you may want to cover:
 |last_name_kana    |string |null: false             |
 |nickname          |string |null: false             |
 |iamge             |text   |                        |
-|mail_address      |string |null: false             |
 |birthday_year     |integer|null: false             |
 |birthday_manth    |integer|null: false             |
 |birthday_day      |integer|null: false             |
