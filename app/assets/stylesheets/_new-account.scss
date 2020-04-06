@@ -31,6 +31,18 @@
         line-height: 120px;
       }
     }
+      #error_explanation {
+        font-size: 13px;
+        // text-align: center;
+        color: red;
+        li {
+          // border-bottom:  solid 2px orange;
+          margin: 0 0 10px 0;
+        }
+      }
+
+        
+      
     &__main {
       h1 {
         
@@ -129,7 +141,7 @@
           &__birthday {
             display: flex;
             span {
-              margin-right: 20px;
+              margin-right: 10px;
               line-height: 60px;
             }
             &__select-wrap {
