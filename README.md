@@ -97,7 +97,7 @@ Productモデルでbrand_new(新品), very_good(良), good(可)とした
 ## categoriesテーブル
 
 |Column|Type|Options|
-|---------------|------||
+|------|----|-------|
 |category_name  |string||
 |category_detail|string||
 
