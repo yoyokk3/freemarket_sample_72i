@@ -3,7 +3,7 @@
   .main-contents__form
     .main-contents__form__top
       %h3 会員情報入力
-    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = form_for @user do |f|
       = render "devise/shared/error_messages", resource: resource
       .main-contents__form__main
         .main-contents__form__main__inner
@@ -71,54 +71,54 @@
           %br
       .main-contents__form__main
         .main-contents__form__main__inner
-          = form_for :addresses do |f|
+          = f.fields_for :address do |i|
             .main-contents__form__main__inner__group
               .main-contents__form__main__inner__group__top
-                = f.label :お名前（全角）
+                = i.label :お名前（全角）
                 %span.form-require 必須
               .main-contents__form__main__inner__group__box
                 .main-contents__form__main__inner__group__box__half-field
-                  = f.text_field :first_name, class: 'main-contents__form__main__inner__group__half-field__leftbox'
+                  = i.text_field :first_name, class: 'main-contents__form__main__inner__group__half-field__leftbox'
                 .main-contents__form__main__inner__group__box__half-field
-                  = f.text_field :last_name, class: 'main-contents__form__main__inner__group__half-field__rightbox'
+                  = i.text_field :last_name, class: 'main-contents__form__main__inner__group__half-field__rightbox'
               .main-contents__form__main__inner__group
                 .main-contents__form__main__inner__group__top
-                  = f.label :お名前カナ（全角）
+                  = i.label :お名前カナ（全角）
                   %span.form-require 必須
                 .main-contents__form__main__inner__group__box
                   .main-contents__form__main__inner__group__box__half-field
-                    = f.text_field :first_name_kana, class: 'main-contents__form__main__inner__group__half-field__leftbox'
+                    = i.text_field :first_name_kana, class: 'main-contents__form__main__inner__group__half-field__leftbox'
                   .main-contents__form__main__inner__group__box__half-field
-                    = f.text_field :last_name_kana, class: 'main-contents__form__main__inner__group__half-field__rightbox'
+                    = i.text_field :last_name_kana, class: 'main-contents__form__main__inner__group__half-field__rightbox'
                 .main-contents__form__main__inner__field
-                  = f.label :郵便番号
+                  = i.label :郵便番号
                   %span.form-require 必須
                   %br
-                  = f.text_field :postal_code
+                  = i.text_field :postal_code
                 .main-contents__form__main__inner__field
-                  = f.label :都道府県
+                  = i.label :都道府県
                   %span.form-require 必須
                   %br
-                  = f.text_field :prefectures
+                  = i.text_field :prefectures
                 .main-contents__form__main__inner__field
-                  = f.label :市区村町
+                  = i.label :市区村町
                   %span.form-require 必須
                   %br
-                  = f.text_field :municipality
+                  = i.text_field :municipality
                 .main-contents__form__main__inner__field
-                  = f.label :番地
+                  = i.label :番地
                   %span.form-require 必須
                   %br
-                  = f.text_field :house_number
+                  = i.text_field :house_number
                 .main-contents__form__main__inner__field
-                  = f.label :マンション名やビル名、部屋番号（任意）
+                  = i.label :マンション名やビル名、部屋番号（任意）
                   %br
-                  = f.text_field :apartment_name
+                  = i.text_field :apartment_name
                 .main-contents__form__main__inner__field
-                  = f.label :お届け先の電話番号（任意）
+                  = i.label :お届け先の電話番号（任意）
                   %br
-                  = f.text_field :call_number
-                .main-contents__form__main__inner__actions
-                  = f.submit "登録する"
+                  = i.text_field :call_number
+          .main-contents__form__main__inner__actions
+            = f.submit "登録する"
                   
   .main-contents__fotter
