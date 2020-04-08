@@ -8,8 +8,8 @@ class PurchasesController < ApplicationController
   end
 
   def  done
-      @product_purchaser= Product.find(params[:id])
-      @product_purchaser.update( purchaser_id: current_user.id)
+      @Product_purchaser= Product.find(params[:id])
+      @Product_purchaser.update( purchaser_id: current_user.id)
     rescue ActiveRecord::RecordNotFound => e
       redirect_to :root, alert: '購入に失敗しました'
   end
