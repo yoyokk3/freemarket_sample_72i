@@ -28,6 +28,7 @@
             = f.password_field :password, autocomplete: "new-password"
           .main-contents__form__main__inner__field
             = f.label :パスワード確認
+            %span.form-require 必須
             %br/
             = f.password_field :password_confirmation, autocomplete: "new-password"
           %h1 本人確認
