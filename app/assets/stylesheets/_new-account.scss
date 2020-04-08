@@ -32,12 +32,24 @@
       }
     }
       #error_explanation {
-        font-size: 13px;
-        // text-align: center;
+        
         color: red;
+        h2 {
+          font-weight: bolder;
+          font-size: 15px;
+          margin-left: 10px;
+          margin-right: 10px;
+          padding: 0.5em 0.5em 0.5em 2em;
+        }
+        ul {
+          margin-left: 10px;
+          margin-right: 10px;
+          padding: 0.5em 0.5em 0.5em 2em;
+        }
         li {
-          // border-bottom:  solid 2px orange;
-          margin: 0 0 10px 0;
+          line-height: 1.5;
+          padding: 0.5em 0;
+          font-size: 13px;
         }
       }
 
@@ -85,6 +97,7 @@
           margin: 0 auto;
           label {
             font-weight: 600;
+            font-size: 16px;
           }
           span {
             margin: 0 0 0 8px;
@@ -92,6 +105,7 @@
             border-radius: 2px;
             color: #fff;
             font-size: 12px;
+            height: 20px;
             background-color: red;
           }
           input {
@@ -107,13 +121,18 @@
           }
         }
         &__group {
+          margin: 0 auto;
           &__top {
             display: flex;
+            
             label {
               font-weight: 600;
+              
             }
             span {
-              margin: 0 0 0 8px;
+              margin: 2px 0 0 8px;
+              height: 14px;
+              line-height: 14px;
               padding: 2px 4px;
               border-radius: 2px;
               color: #fff;
