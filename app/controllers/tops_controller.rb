@@ -1,6 +1,7 @@
 class TopsController < ApplicationController
 
   def index
+    @products = Product.all.limit(3).order("id DESC")
   end
 
   def new

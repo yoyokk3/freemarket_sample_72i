@@ -1,7 +1,7 @@
 .fourth{
   padding: 60px 100px;
   background-color: #ffffff;
-  height: 560px;
+  height: auto;
   box-sizing: border-box;
   .fourth__top{
     font-size: 27px;
@@ -42,7 +42,7 @@
         text-align: left;
       }
     }   
-  }
+  } 
 }
 
 .fifth{
@@ -69,17 +69,37 @@
     display: flex;
     justify-content: space-around;
     &__list{
-      background-color: lightcyan;
       width: 220px;
       height: 245px;
       display: inline-block;
-      float:left;
+      a{
+        text-decoration: none;
+      }
       &__img{
         width: 220px;
-        height: 150px;
+        height: 166px;
         position: relative;
         margin: 0;
         z-index: auto;
+        background-size: cover;
+        &__sold{
+          width: 0;
+          height: 0;
+          border-top: 60px solid #ea352d ;
+          border-right: 60px solid transparent;
+          border-bottom: 60px solid transparent;
+          border-left: 60px solid #ea352d ;
+          z-index:100;
+          position: relative;
+          &__inner{
+            transform: rotate(-45deg);
+            font-size: 25px;
+            margin:-30px 0px 0px -55px;
+            color: #fff;
+            letter-spacing: 2px;
+            font-weight: 600;
+          }
+        }
       }
       &__body{
         background-color: white;
@@ -92,7 +112,11 @@
           text-align: left;
         }
         &__detail{
-          font-size: 16px;
+          font-size: 16px
+          &__tax{
+            font-size: 10px;
+            margin-top: 2px;
+          }
         }
       }
     }
@@ -127,7 +151,6 @@
       width: 220px;
       height: 245px;
       display: inline-block;
-      float:left;
       &__img{
         width: 220px;
         height: 150px;
@@ -151,14 +174,12 @@
       }
     }
   }
-
 }
 .sixth{
   height: 250px;
   width: 100%;
   background-size: cover;
-  
-  background-image: url(/assets/second/bg-appBanner-pict.jpg);
+  background-image: image-url("second/bg-appBanner-pict.jpg");
   padding:60px 0px;
   position: relative;
   background-size: cover;

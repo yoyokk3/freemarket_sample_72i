@@ -83,6 +83,9 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'devise-i18n'
   gem 'devise-i18n-views'
+  gem 'rails-i18n'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 gem 'payjp'
