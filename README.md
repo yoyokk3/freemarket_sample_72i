@@ -28,7 +28,7 @@ Things you may want to cover:
 
 ## usersテーブル
 |Column            |Type   |Option                  |
-|------------------|------ |------------------------|
+|------------------|-------|------------------------|
 |first_name        |string |null: false             |
 |last_name         |string |null: false             |
 |email             |string |null: false, default: ""|
@@ -49,8 +49,8 @@ Things you may want to cover:
 
 
 ## addressesテーブル
-|Column            |Type   |Option     |
-|------------------|-------|-----------|
+|Column            |Type       |Option                       |
+|------------------|-----------|-----------------------------|
 |first_name        |string     |null: false                  |
 |last_name         |string     |null: false                  |
 |first_name_kana   |string     |null: false                  |
@@ -68,8 +68,8 @@ Things you may want to cover:
 - belongs_to :product
 
 ## productsテーブル
-|Column|Type|Option|
-|------|----|------|
+|Column|Type|Option                |
+|-----------|----------|-----------|
 |name       |string    |null: false|
 |price      |integer   |null: false|
 |status     |integer   |null: false|
@@ -96,7 +96,7 @@ Productモデルでbrand_new(新品), very_good(良), good(可)とした
 ## categoriesテーブル
 
 |Column         |Type  |Options|
-|---------------|------|       |
+|---------------|------|-------|
 |category_name  |string|       |
 |category_detail|string|       |
 
@@ -107,7 +107,7 @@ Productモデルでbrand_new(新品), very_good(良), good(可)とした
 ## brandsテーブル
 
 |Column    |Type  |Options|
-|----------|------|       |
+|----------|------|-------|
 |brand_name|string|       |
 
 ### Association
@@ -116,8 +116,8 @@ Productモデルでbrand_new(新品), very_good(良), good(可)とした
 
 ## cardsテーブル
 
-|Column         |Type  |Options|
-|--------------|---------|                              |
+|Column        |Type     |Options                       |
+|--------------|---------|------------------------------|
 |card_number   |integer  |null: false                   |
 |cbrand        |string   |null: false                   |
 |deadline_year |integer  |null: false                   |
@@ -133,7 +133,7 @@ Productモデルでbrand_new(新品), very_good(良), good(可)とした
 ## imagesテーブル
 
 |Column |Type      |Options                       |
-|-------|----------|                              |
+|-------|----------|------------------------------|
 |image  |text      |null: false                   |
 |product|references|null: false, foreign_key: true|
 
@@ -143,7 +143,7 @@ Productモデルでbrand_new(新品), very_good(良), good(可)とした
 ## likesテーブル
 
 |Column    |Type      |Options                       |
-|----------|----------|                              |
+|----------|----------|------------------------------|
 |user_id   |references|null: false, foreign_key: true|
 |product_id|references|null: false, foreign_key: true|
 
