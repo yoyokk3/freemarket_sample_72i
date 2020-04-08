@@ -1,0 +1,15 @@
+- @products.each do |product|
+  .fifth__category-box__list
+    = link_to "#" do
+      .fifth__category-box__list__img{ style: "background-image: url(#{product.images.first.image});"}
+        -if product.purchaser_id.present? 
+          .fifth__category-box__list__img__sold
+            .fifth__category-box__list__img__sold__inner SOLD
+      .fifth__category-box__list__body
+        .fifth__categiry-box__list__body__name
+          = product.name
+        .fifth__category-box__list__body__detail
+          = product.price
+          %span 円
+          .fifth__category-box__list__body__detail__tax
+            (税込)
