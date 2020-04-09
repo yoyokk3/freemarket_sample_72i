@@ -12,6 +12,8 @@ class TopsController < ApplicationController
   end
 
   def show
+    @product = Product.find(params[:id])
+    @image =Image.find(params[:id])
   end
 
   def edit
@@ -21,5 +23,14 @@ class TopsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+  def products_params
+    params.require(:product).permit(:name, :price, :status, :description, :send_cost, :user_id, :category_id, :brand_id )
+  end
+
+  def image_params
+    params.require(:image).permit(:image)
   end
 end
