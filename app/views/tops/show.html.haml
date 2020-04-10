@@ -55,9 +55,8 @@
               %td 即日発送
         .optionalArea
           %ul
-            %li#likeBtn.optionalBtn.likeBtn
-              %i.fas.fa-star
-              お気に入り
+            %li
+              = render partial: 'likes/like', locals: { product: @product, products: @products, likes: @likes, like: @like}
           %ul
             %li.optional
               = link_to '#' do

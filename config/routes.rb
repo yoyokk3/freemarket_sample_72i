@@ -8,10 +8,14 @@ Rails.application.routes.draw do
   get 'users/logout'
   
   root to: 'tops#index'
-  resources :tops
+  resources :tops do
+    resources :products, only: [:new, :create, :show] do
+      resources :likes, only: [:create, :destroy]
+    end
+  end
   resources :users 
   resources :purchases
-
+  
   resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'

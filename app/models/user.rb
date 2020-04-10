@@ -14,7 +14,7 @@ validates :birthday_day, presence: true
 
 
 has_one  :card
-has_many :likes
+has_many :likes, dependent: :destroy
 has_many :products
 has_one  :address, dependent: :destroy
 accepts_nested_attributes_for :address

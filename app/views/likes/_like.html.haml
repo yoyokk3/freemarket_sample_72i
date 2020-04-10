@@ -1,0 +1,21 @@
+- if user_signed_in?
+  - if product.like_user(current_user.id)
+    #likeBtn.optionalBtn.dislike
+      =link_to tops_like_path(current_user, product, like), method: "DELETE", remote: true do
+        %i.fas.fa-star
+        %span お気に入り
+        %span 
+          = product.likes_count
+  - else
+    #likeBtn.optionalBtn.like
+      =link_to tops_likes_path(current_user, product), method: "POST", remote: true do
+        %i.fas.fa-star
+        %span お気に入り
+        %span
+          = product.likes_count
+- else
+  #likeBtn.optionalBtn.like
+    %i.fas.fa-star
+      %span お気に入り
+      %span 
+        = product.like_count
