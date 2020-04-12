@@ -1,0 +1,13 @@
+- @parents.each do |parent|
+  - parent.children.each do |child|
+    - child.children.each do |grandchild|
+      -if @product.categories_id == grandchild.id
+        = link_to '#' do
+          = parent.name
+        %br
+        = link_to '#' do
+          = child.name
+        %br
+        = link_to '#' do
+          = grandchild.name
+        %br

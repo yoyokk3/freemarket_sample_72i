@@ -13,6 +13,8 @@ class TopsController < ApplicationController
   end
 
   def show
+    @product = Product.find(params[:id])
+    @parents = Category.where(ancestry:nil)
   end
 
   def edit
@@ -23,4 +25,10 @@ class TopsController < ApplicationController
 
   def destroy
   end
+
+  private
+  def product_params
+    params.require(:product)
+  end
+
 end
