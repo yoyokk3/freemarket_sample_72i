@@ -36,7 +36,7 @@ class TopsController < ApplicationController
 
   def destroy
     @product.destroy
-    if @product.save
+    if @product.destroy
       redirect_to root_path
     else
       render :update
