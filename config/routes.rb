@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   resources :tops
   resources :users
   resources :purchases
-
   resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'
@@ -16,4 +15,5 @@ Rails.application.routes.draw do
       post 'delete', to: 'card#delete'
     end
   end
+  # match '/tops(.:format)' => 'tops#top_create', via: [ :post ]
 end

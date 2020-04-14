@@ -68,25 +68,32 @@ ActiveRecord::Schema.define(version: 2020_04_01_093407) do
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.integer "price"
-    t.string "status"
-    t.text "description"
-    t.integer "sending"
+    t.string "name", null: false
+    t.integer "price", null: false
+    t.integer "status", null: false
+    t.text "description", null: false
+    t.integer "sending", null: false
+    t.integer "send_cost", null: false
+    t.bigint "users_id", null: false
+    t.bigint "categories_id", null: false
+    t.bigint "brands_id", null: false
+    t.bigint "shippings_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "send_cost", null: false
-    t.bigint "user_id"
-    t.bigint "category_id"
-    t.bigint "brand_id"
-    t.index ["brand_id"], name: "fk_rails_f3b4d49caa"
-    t.index ["category_id"], name: "fk_rails_fb915499a4"
-    t.index ["user_id"], name: "fk_rails_dee2631783"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "first_name", null: false
+    t.string "last_name", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "first_name_kana", null: false
+    t.string "last_name_kana", null: false
+    t.string "nickname", null: false
+    t.text "image"
+    t.integer "birthday_year", null: false
+    t.integer "birthday_manth", null: false
+    t.integer "birthday_day", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -100,7 +107,4 @@ ActiveRecord::Schema.define(version: 2020_04_01_093407) do
   add_foreign_key "images", "products"
   add_foreign_key "likes", "products"
   add_foreign_key "likes", "users"
-  add_foreign_key "products", "brands"
-  add_foreign_key "products", "categories"
-  add_foreign_key "products", "users"
 end
