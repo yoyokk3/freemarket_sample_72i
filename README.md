@@ -28,7 +28,7 @@ Things you may want to cover:
 
 ## usersテーブル
 |Column            |Type   |Option                  |
-|------------------|------ |------------------------|
+|------------------|-------|------------------------|
 |first_name        |string |null: false             |
 |last_name         |string |null: false             |
 |email             |string |null: false, default: ""|
@@ -49,8 +49,8 @@ Things you may want to cover:
 
 
 ## addressesテーブル
-|Column            |Type   |Option     |
-|------------------|-------|-----------|
+|Column            |Type       |Option                       |
+|------------------|-----------|-----------------------------|
 |first_name        |string     |null: false                  |
 |last_name         |string     |null: false                  |
 |first_name_kana   |string     |null: false                  |
@@ -68,8 +68,8 @@ Things you may want to cover:
 - belongs_to :product
 
 ## productsテーブル
-|Column|Type|Option|
-|------|----|------|
+|Column|Type|Option                |
+|-----------|----------|-----------|
 |name       |string    |null: false|
 |price      |integer   |null: false|
 |status     |integer   |null: false|
@@ -100,6 +100,10 @@ Productモデルでbrand_new(新品), very_good(良), good(可)とした
 |------|----|-------|
 |category_name  |string||
 |category_detail|string||
+|Column         |Type  |Options|
+|---------------|------|-------|
+|category_name  |string|       |
+|category_detail|string|       |
 
 ### Association
 - has_many :products

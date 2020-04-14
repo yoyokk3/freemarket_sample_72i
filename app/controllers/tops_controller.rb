@@ -2,6 +2,7 @@ class TopsController < ApplicationController
   before_action :set_product, except: [:index, :new, :create]
 
   def index
+    @products = Product.all.limit(3).order("id DESC")
   end
 
   def new
