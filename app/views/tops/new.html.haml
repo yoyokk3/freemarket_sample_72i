@@ -20,21 +20,6 @@
           = file_field_tag :image, name: "product[images_attributes][#{@product.images.count}][image]", class: 'js-file'
           .js-remove 削除
 
-
-
-      -# .image1__preview
-      -#   = form.label :image, class: 'form--image10' do
-      -#     %img{alt: "image", src:"/assets/second/icon_camera.png", size:"229x229"}
-      -#     = form.file_field :image
-      -# .image1__preview
-      -#   = form.label :image, class: 'form--image10' do
-      -#     %img{alt: "image", src:"/assets/second/icon_camera.png", size:"229x229"}
-      -#     = form.file_field :image
-      -# .image1__preview
-      -#   = form.label :image, class: 'form--image10' do
-      -#     %img{alt: "image", src:"/assets/second/icon_camera.png", size:"229x229"}
-      -#       = form.file_field :image
-
     .main__form
       .main__form__name
         .main__form__name__logo
@@ -113,24 +98,3 @@
           = f.number_field :name 
       .main__form__btn
         = f.submit "出品する"
-
-
-    -# .wrapper
-    -#   - @contents.each do|c|
-    -#     .wrapper__content-title
-    -#       = c
-      
-
-  -# = form_for @product, url: new_top_path do |form|
-  -#   .main__box
-  -#   .main__box__image1
-  -#     .image1__preview
-  -#       - if @product.persisted?
-  -#         - @product.images.each_with_index do |image, i|
-  -#           = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
-  -#       = form.fields_for :images do |image|
-  -#         .js-file_group{"data-index" => "#{image.index}"}
-  -#           = form.label :image, class: 'form--image10' do
-  -#             %img{alt: "image", src:"/assets/second/icon_camera.png", size:"229x229"}
-  -#             = image.file_field :image
-  -#             = image.hidden_field :id, value: image.object.id #編集時にはidが必要らしい

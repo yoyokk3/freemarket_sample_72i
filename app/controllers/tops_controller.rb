@@ -13,12 +13,11 @@ class TopsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    # if @product.save
-    #   redirect_to root_path
-    # else
-    #   render :new
-    # end
-    redirect_to root_path
+    if @product.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def show
@@ -37,7 +36,11 @@ class TopsController < ApplicationController
 
   def destroy
     @product.destroy
-    redirect_to root_path
+    if @product.save
+      redirect_to root_path
+    else
+      render :update
+    end
   end
 
 
