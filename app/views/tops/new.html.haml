@@ -37,7 +37,8 @@
           .main__form__description__logo__must
             *必須
         .main__form__description__text
-          = f.text_area :description, placeholder:"色・素材・重さ・低下・注意点などを記載しましょう（１０００文字まで）例：先月に５４００円で購入したセーターです。着用回数は５回未満です。素材はカシミヤなので着心地がいいです。"
+          = f.text_area :description, placeholder:"色・素材・重さ・低下・注意点などを記載しましょう（１０００文字まで）例：先月に５４００円で購入したセーターです。着用回数は５回未満です。素材はカシミヤなので着心地がいいです。", size: "67x13"
+
       .main__form__category
         .main__form__category__logo
           .main__form__category__logo__fix
@@ -45,7 +46,7 @@
           .main__form__category__logo__must
             *必須
         .main__form__category__text
-          = f.text_field :name, placeholder: "指定なし"
+          -# = f.text_field :categories_id, placeholder: "指定なし"
 
       .main__form__brand
         .main__form__brand__logo
@@ -53,7 +54,7 @@
             ブランド
           
         .main__form__brand__text
-          = f.text_field :name, placeholder: "指定なし" 
+          -# = f.text_field :brands_id, placeholder: "指定なし" 
       .main__form__status
         .main__form__status__logo
           .main__form__status__logo__fix
@@ -73,7 +74,7 @@
           .main__form__sendcost__logo__must
             *必須
         .main__form__sendcost__text
-          = f.select :name, {送料込み（出品者が負担）: 1, 送料別（購入者が負担）: 2}
+          = f.select :send_cost, {送料込み（出品者が負担）: 1, 送料別（購入者が負担）: 2}
       .main__form__sending
         .main__form__sending__logo
           .main__form__sending__logo__fix
@@ -87,7 +88,7 @@
           .main__form__date__logo__must
             *必須
         .main__form__date__text
-          = f.text_field :name, placeholder: "支払い後、１〜２日目安で発送" 
+          = f.text_field :sending, placeholder: "支払い後、１〜２日目安で発送" 
       .main__form__price
         .main__form__price__logo
           .main__form__price__logo__fix
@@ -95,6 +96,9 @@
           .main__form__price__logo__must
             *必須
         .main__form__price__text
-          = f.number_field :name 
+          = f.number_field :price
       .main__form__btn
         = f.submit "出品する"
+      -# %p= f.hidden_field :exhibition_status, {:value => "1"}
+      %p
+        = f.hidden_field :exhibition_status, :value => 1

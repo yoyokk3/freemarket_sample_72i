@@ -6,11 +6,12 @@ class CreateProducts < ActiveRecord::Migration[5.2]
     t.integer     :status,      null: false
     t.text        :description, null: false
     t.integer     :sending,     null: false
-    t.integer     :send_cost,   null: false
-    t.bigint      :users_id,    null: false, foreign_key: true
-    t.bigint      :categories_id,    null: false, foreign_key: true
-    t.bigint      :brands_id,    null: false, foreign_key: true
-    t.bigint      :shippings_id,    null: false, foreign_key: true
+    t.integer     :send_cost
+    t.integer     :exhibition_status, null: false
+    t.bigint      :users_id,    foreign_key: true
+    t.bigint      :categories_id,    foreign_key: true
+    t.bigint      :brands_id,    foreign_key: true
+    t.bigint      :shippings_id,  foreign_key: true
     t.timestamps
     end
   end
