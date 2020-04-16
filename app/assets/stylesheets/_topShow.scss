@@ -134,10 +134,34 @@ body{
         background-color: #fff;
         margin: 10px 0;
         text-align: center;
-        #comment_body{
-          width: 96%;
-          min-height: 104px;
-          padding: 10px;
+        &__comment {
+          margin-bottom: 50px;
+          .comment-user{
+            font-size: 15px;
+            text-align: left;
+            padding-top: 20px;
+            padding-left: 5px;
+            font-weight: bold;
+          }
+          .comment-text {
+            border: 1px solid #f5f5f5;
+            border-radius: 10px;
+            background: #f5f5f5;
+            font-size: 15px;
+            padding: 20px;
+            text-align: left;
+            margin-top: 5px;
+          }
+          .comment-date {
+            color: silver;
+            padding-top: 15px;
+            font-size: 13px;
+          }
+          .comment-destroy {
+            text-align: right;
+            color: silver;
+            float: right;
+          }
         }
         p{
           padding: 8px;
@@ -145,6 +169,11 @@ body{
           background-color: #f8f8f8;
           margin: 10px 0;
           text-align: left;
+        }
+        .comment_body{
+          width: 96%;
+          min-height: 104px;
+          padding: 10px;
         }
         .commitBtn{
           line-height: 48px;

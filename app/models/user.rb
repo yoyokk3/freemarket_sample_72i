@@ -8,5 +8,6 @@ has_one  :card
 has_many :likes
 has_many :products
 has_many :addresses
+has_many :comments
 
 end

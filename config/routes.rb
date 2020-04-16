@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   get 'users/logout'
   devise_for :users
   root to: 'tops#index'
-  resources :tops
   resources :users
+  resources :tops do
+    resources :comments, only: :create
+  end
+  
   resources :purchases
 
   resources :card, only: [:new, :show] do
