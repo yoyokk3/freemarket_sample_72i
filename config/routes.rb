@@ -8,8 +8,15 @@ Rails.application.routes.draw do
   get 'users/logout'
   
   root to: 'tops#index'
-  resources :tops
-  resources :users 
+  resources :tops do
+    collection do
+      get 'category_children' 
+      get 'category_grandchildren'
+    end
+  end
+  resources :categories,only: :index
+  resources :users
+
   resources :purchases
   resources :card, only: [:new, :show] do
     collection do
