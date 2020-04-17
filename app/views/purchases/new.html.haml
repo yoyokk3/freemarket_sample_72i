@@ -35,6 +35,25 @@
           .row4
             .col3 支払金額
             .col3_right ¥1,000
+      -if user_signed_in?
+        -if @product.users_id == current_user.id
+          = link_to edit_purchase_path(@product) do
+            .product-edit-btn 商品の編集
+            .product-btn-or or
+            .product-stop-btn 出品を一旦停止する
+        -else 
+          -if @product.status == 0
+            = link_to product_card_confirmation_path(@product) do
+              .product-buy-btn 購入画面に進む
+          -else
+            .product-buy-btn-sold 売り切れました
+      -else
+        -if @product.status == 0
+          = link_to "/users/sign_in" do
+            .product-buy-btn 購入画面に進む
+        -else
+          .product-buy-btn-sold 売り切れました
+
       .sendingInfo
         .col4 配送先住所
         %ul.col5
