@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   get 'users/logout'
   
   root to: 'tops#index'
-  resources :tops
+  resources :tops do
+    collection do
+      get 'category_children' 
+      get 'category_grandchildren'
+    end
+  end
   resources :categories,only: :index
   resources :users
 
@@ -20,4 +25,5 @@ Rails.application.routes.draw do
       post 'delete', to: 'card#delete'
     end
   end
+  # match '/tops(.:format)' => 'tops#top_create', via: [ :post ]
 end

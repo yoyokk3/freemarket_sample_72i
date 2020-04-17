@@ -74,16 +74,15 @@ ActiveRecord::Schema.define(version: 2020_04_08_032956) do
     t.integer "status", null: false
     t.text "description", null: false
     t.integer "sending", null: false
-    t.integer "send_cost", null: false
-    t.bigint "users_id", null: false
-    t.bigint "categories_id", null: false
-    t.bigint "brands_id", null: false
+    t.integer "send_cost"
+    t.integer "exhibition_status", null: false
+    t.bigint "users_id"
+    t.bigint "categories_id"
+    t.bigint "brands_id"
+    t.bigint "shippings_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "purchaser_id"
-    t.index ["brands_id"], name: "index_products_on_brands_id"
-    t.index ["categories_id"], name: "index_products_on_categories_id"
-    t.index ["users_id"], name: "index_products_on_users_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -111,7 +110,4 @@ ActiveRecord::Schema.define(version: 2020_04_08_032956) do
   add_foreign_key "images", "products"
   add_foreign_key "likes", "products"
   add_foreign_key "likes", "users"
-  add_foreign_key "products", "brands", column: "brands_id"
-  add_foreign_key "products", "categories", column: "categories_id"
-  add_foreign_key "products", "users", column: "users_id"
 end

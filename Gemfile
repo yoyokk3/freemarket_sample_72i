@@ -67,6 +67,7 @@ gem 'font-awesome-sass'
 gem 'devise'
 gem 'pry-rails'
 gem 'carrierwave'
+gem 'rmagick'
 gem 'mini_magick'
 gem 'fog-aws'
 gem 'ancestry'
@@ -91,3 +92,4 @@ end
 gem 'payjp'
 
 gem "jquery-rails"
+gem 'active_hash'

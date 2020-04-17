@@ -1,34 +1,73 @@
 class TopsController < ApplicationController
+  before_action :set_product, except: [:index, :new, :create, :category_children, :category_grandchildren]
 
   def index
     @products = Product.all.limit(3).order("id DESC")
   end
 
   def new
-    @products = Product.new
-    @contents = ["マイページ","お知らせ","いいね一覧","出品する","出品した商品"]
+    @product = Product.new
+    @product.images.new
+    @category = Category.where(ancestry:nil)
   end
 
-  def create
+  def category_children
+    @category_children = Category.find(params[:productcategory]).children 
   end
+
+ 
+  def category_grandchildren
+    @category_grandchildren = Category.find(params[:productcategory]).children
+  end
+
+
+  def create
+    binding.pry
+    @product = Product.new(product_params)
+    if @product.save
+      redirect_to root_path
+    else
+      redirect_to new_top_path
+    end
+  end
+
 
   def show
     @product = Product.find(params[:id])
-    @parents = Category.where(ancestry:nil)
+    @category = Category.where(ancestry:nil)
   end
 
   def edit
   end
 
   def update
+    if @product.update(product_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def destroy
+    if @product.destroy
+      redirect_to root_path
+    else
+      render :update
+    end
   end
+
 
   private
   def product_params
-    params.require(:product)
+    params.require(:product).permit(:name, :price, :status, :description, :sending,
+                                    :sending_cost, :user_id, :categories_id, :brand_id,
+                                    :exhibition_status,:purchaser_id,
+                                    images_attributes: [:image, :_destroy, :id]
+    )
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
   end
 
 end
