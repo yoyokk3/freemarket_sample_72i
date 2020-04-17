@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 2020_04_09_084733) do
     t.bigint "user_id"
     t.bigint "category_id"
     t.bigint "brand_id"
+    t.integer "purchaser_id"
     t.index ["brand_id"], name: "fk_rails_f3b4d49caa"
     t.index ["category_id"], name: "fk_rails_fb915499a4"
     t.index ["user_id"], name: "fk_rails_dee2631783"

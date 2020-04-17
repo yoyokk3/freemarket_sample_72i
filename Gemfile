@@ -67,6 +67,7 @@ gem 'font-awesome-sass'
 gem 'devise'
 gem 'pry-rails'
 gem 'carrierwave'
+gem 'rmagick'
 gem 'mini_magick'
 gem 'fog-aws'
 
@@ -82,8 +83,12 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'devise-i18n'
   gem 'devise-i18n-views'
+  gem 'rails-i18n'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 gem 'payjp'
 
 gem "jquery-rails"
+gem 'active_hash'

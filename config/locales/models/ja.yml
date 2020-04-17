@@ -1,0 +1,24 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user: 
+        nickname: ニックネーム
+        first_name: 苗字
+        last_name: 名前
+        first_name_kana: 苗字（カナ）
+        last_name_kana: 名前（カナ）
+        birthday_year: 生年月日の西暦
+        birthday_manth: 生年月日の年
+        birthday_day: 生年月日の日
+      user/address:
+        first_name: 商品送付先住所情報の苗字
+        last_name: 商品送付先住所情報の名前
+        first_name_kana: 商品送付先住所情報の苗字（カナ）
+        last_name_kana: 商品送付先住所情報の名前（カナ）
+        postal_code: 郵便番号
+        prefectures: 都道府県
+        municipality: 市区町村
+        house_number: 番地
+        
