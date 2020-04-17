@@ -3,7 +3,7 @@
   .main-contents__form
     .main-contents__form__top
       %h3 会員情報入力
-    = form_for @user do |f|
+    = form_for @user ,url: user_registration_path do |f|
       = render "devise/shared/error_messages", resource: resource
       .main-contents__form__main
         .main-contents__form__main__inner
@@ -67,11 +67,12 @@
                 =f.select :birthday_day ,['1', '2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31'],{include_blank: '--'}, class: 'main-contents__form__main__inner__group__birthday__select-wrap__default'
                     
                 %span 日
+          
+      .main-contents__form__main
+        .main-contents__form__main__inner
           %br
           %h2 商品送付先住所情報
           %br
-      .main-contents__form__main
-        .main-contents__form__main__inner
           = f.fields_for :address do |i|
             .main-contents__form__main__inner__group
               .main-contents__form__main__inner__group__top

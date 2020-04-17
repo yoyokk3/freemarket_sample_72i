@@ -1,0 +1,14 @@
+.main-contents
+  .main-contents__header
+  .main-contents__form
+    .main-contents__form__top
+      %h3 新規会員登録
+    .main-contents__form__main
+      .main-contents__form__main__inner
+        .main-contents__form__main__inner__btn-box
+          = link_to 'メールアドレスで登録', new_user_registration_path, class: "main-contents__form__main__inner__btn-box__mail"
+          
+          = link_to 'Facebookで登録する',  user_facebook_omniauth_authorize_path, method: :post, class: "main-contents__form__main__inner__btn-box__facebook"
+          
+          = link_to 'Googleで登録する',  user_google_oauth2_omniauth_authorize_path, method: :post, class: "main-contents__form__main__inner__btn-box__google"
+  .main-contents__fotter

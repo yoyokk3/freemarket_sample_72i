@@ -1,18 +1,11 @@
 .main-contents {
   width: 100%;
   height: 100%;
-  background-color: rgb(157, 217, 219);
+  background-color: #3CCACE;
   box-sizing: border-box;
   &__header{
     height: 120px;
     width: 100%;
-    img {
-      width: 160px;
-      height: 40px;
-      margin-top: 45px;
-      margin-left: 155px;
-      
-    }
   }
 
   
@@ -29,6 +22,8 @@
         font-size: 30px;
         text-align: center;
         line-height: 120px;
+        font-size: 22px;
+        font-weight: bolder;
       }
     }
       #error_explanation {
@@ -56,6 +51,7 @@
         
       
     &__main {
+      background-color: #fff;
       h1 {
         
         font-size: 14px;
@@ -69,15 +65,80 @@
       p {
         font-size: 8px;
       }
-      a {
-        text-decoration: none;
-        color: gray;
-        font-size: 12px;
-      }
+      
       &__inner {
-        width: 400px;
+        max-width: 342px;
         margin: 0 auto;
         padding-bottom: 50px;
+        .password {
+          text-decoration: none;
+          font-size: 12px;
+          color: #979797;
+        }
+        label {
+          font-size: 12px;
+        }
+        &__btn-box {
+          display: inline;
+          padding: 32px 64px;
+          &__mail{
+            display: block;
+            position: relative;
+            line-height: 34px;
+            width: 315px;
+            text-align: center;
+            margin-top: 10px;
+            padding: 0.25em 0.5em;
+            text-decoration: none;
+            color: #fff;
+            background: #fd5335;
+            border-radius: 4px;
+            box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+            font-weight: bold;
+            border: solid 2px #fd5335;
+          }
+          &__mail:active {
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+          }
+          &__facebook {
+            display: block;
+            position: relative;
+            line-height: 34px;
+            width: 315px;
+            text-align: center;
+            margin-top: 10px;
+            padding: 0.25em 0.5em;
+            text-decoration: none;
+            color: #fff;
+            background: #385185;
+            border-radius: 4px;
+            box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+            font-weight: bold;
+            border: solid 2px #385185;
+          }
+          &__facebook:active {
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+          }
+          &__google {
+            display: block;
+            position: relative;
+            line-height: 34px;
+            width: 315px;
+            text-align: center;
+            margin-top: 10px;
+            padding: 0.25em 0.5em;
+            text-decoration: none;
+            color: #333;
+            background: #e2e1e1;
+            border-radius: 4px;
+            box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+            font-weight: bold;
+            border: solid 2px #979797;
+          }
+          &__google:active {
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+          }
+      }
         &__actions {
           height: 100px;
           position: relative;
@@ -85,9 +146,9 @@
           input[type =submit] {
             position: absolute;
             bottom: 30px;
-            left: 30px;
+            width: 334px;
             border-radius:4px 4px 4px 4px;
-            background-color: red;
+            background-color:#fd5335;
             color: #fff;
             padding: 10px 140px;
           }
@@ -106,10 +167,10 @@
             color: #fff;
             font-size: 12px;
             height: 20px;
-            background-color: red;
+            background-color: #fd5335;
           }
           input {
-            width: 370px;
+            width: 300px;
             margin: 8px 0 0;
             height: 38px;
             padding: 10px 16px 8px;
@@ -137,7 +198,7 @@
               border-radius: 2px;
               color: #fff;
               font-size: 12px;
-              background-color: red;
+              background-color: #fd5335;
             }
           }
           &__box {
@@ -145,7 +206,7 @@
             
             &__half-field {
               input {
-                width: 170px;
+                width: 134px;
                 margin: 8px 0 0;
                 height: 28px;
                 padding: 10px 16px 8px;
