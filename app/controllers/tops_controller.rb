@@ -22,7 +22,6 @@ class TopsController < ApplicationController
 
 
   def create
-    binding.pry
     @product = Product.new(product_params)
     if @product.save
       redirect_to root_path
@@ -33,7 +32,6 @@ class TopsController < ApplicationController
 
 
   def show
-    @product = Product.find(params[:id])
     @category = Category.where(ancestry:nil)
   end
 
