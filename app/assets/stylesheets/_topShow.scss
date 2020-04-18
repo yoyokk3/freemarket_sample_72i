@@ -65,13 +65,24 @@ body{
             font-size: 16px;
           }
         }
-        .product-buy-button{
-          text-align: center;
-          button[type="submit"]{
-            width: 200px;
-            font-size: 24px;
-            background-color: red;
-            margin-bottom: 20px;
+        .product-btn{
+          display: flex;
+          justify-content: space-around;
+          .product-edit-button{
+            text-align: left;
+          }
+          .product-del-button{
+            text-align: right;
+          }
+          
+          .product-buy-button{
+            text-align: center;
+            button[type="submit"]{
+              width: 200px;
+              font-size: 24px;
+              background-color: red;
+              margin-bottom: 20px;
+            }
           }
         }
         .itemDetail{

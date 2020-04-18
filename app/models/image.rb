@@ -1,5 +1,5 @@
 class Image < ApplicationRecord
-  belongs_to :product dependent: :destroy
+  belongs_to :product 
   mount_uploader :image, ImageUploader
 
 
