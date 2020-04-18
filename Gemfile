@@ -86,7 +86,7 @@ group :development, :test do
   gem 'rails-i18n'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
-  gem 'omniauth-facebook'
+  gem 'omniauth-facebook', ' ~> 4.0.0'
   gem 'omniauth-google-oauth2'
   gem "omniauth-rails_csrf_protection"
   gem 'high_voltage'
