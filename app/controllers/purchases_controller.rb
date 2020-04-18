@@ -7,6 +7,7 @@ class PurchasesController < ApplicationController
     User.create(user_params)
   end
 
+
   def  done
       @product = Product.find(params[:id])
       @product.update( purchaser_id: current_user.id)

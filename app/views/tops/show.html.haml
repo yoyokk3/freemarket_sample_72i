@@ -7,52 +7,52 @@
         .itemBox__image
           .itemBox__image__main{style:"background-image: url(#{@product.images.first.image});"}
           .itemBox__image__sub
-            %li{style:"background-image: url(#{@product.images.second.image});"}
-              -# = image_tag 'top/catCute.jpeg', alt: 'CatCute'
-            %li{style:"background-image: url(#{@product.images.third.image});"}
-              -# = image_tag 'top/dogCute.jpeg', alt: 'DogCute'
-            %li{style:"background-image: url(#{@product.images.fourth.image});"}
-              -# = image_tag 'top/rabbitCute.jpeg', alt: 'RabbitCute'
+            - @product.images.each do |image|
+              %li{style:"background-image: url(#{image.image});"}
+          
+            -#   %li{style:"background-image: url(#{@product.images.third.image});"}
+            -# -if @product.images.fourth.image.present?
+            -#   %li{style:"background-image: url(#{@product.images.fourth.image});"} 
         .itemBox__price
           .itemBox__price--num 
             =@product.price
           .itemBox__price--detail
             %span (税込)
             %span 送料込み
-        - if user_signed_in? && current_user.id == @product.purchase.seller_id
+        - if user_signed_in? && current_user.id == @product.users_id
           .product-edit-button
-            = link_to "商品情報を編集する",  edit_product_path(@product)
+            = link_to "商品情報を編集する",  edit_top_path(@product)
           .product-buy-button
-            = link_to 'この商品を削除する', product_path(@product), method: :delete, data: { confirm: "本当に削除しますか？" }
+            = link_to 'この商品を削除する', top_path(@product), method: :delete, data: { confirm: "本当に削除しますか？" }
         - else
           .product-buy-button
             %button.decisionBtn{name: 'button', type: 'submit'}
               = link_to "購入画面に進む", edit_purchase_path(@product)
         .itemDetail 
           =@product.description
-        -# 犬と猫と鳥とウサギです。家の方針で飼えなくなりました。引き取っていただけませんか。お金入りません。名前はカレーライスです。カレノスケ呼ぶと喜びます。
         .table
           %table
             %tr 
               %th 出品者
-              %td 加藤陽
+              %td 
+                = current_user.nickname
             %tr
-              %th カテゴリー
-              %td
-                =@product.category.category_name
-                = link_to '', '#'
-                %br
-                = link_to '', '#'
-                %br
-                = link_to '', '#'
-                %br
+              -# %th カテゴリー
+              -# %td
+              -#   =@product.category.category_name
+              -#   = link_to '', '#'
+              -#   %br
+              -#   = link_to '', '#'
+              -#   %br
+              -#   = link_to '', '#'
+              -#   %br
             %tr
               %th 商品のサイズ
               %td S
             %tr
-              %th ブランド
-              %td
-                =@product.brand.brand_name
+              -# %th ブランド
+              -# %td
+              -#   =@product.brand.brand_name
             %tr
               %th 商品の状態
               %td 
@@ -97,10 +97,10 @@
           相手のことを考え丁寧なコメントを心がけましょう。
           %br
           不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      - if current_user
-        = form_for [@product,@comment] do |c|
-          =c.text_area :comment,class:"comment_body"
-          =c.submit 'コメントする',class:"commitBtn"
+      -# - if current_user
+      -#   = form_for [@product,@comment] do |c|
+      -#     =c.text_area :comment,class:"comment_body"
+      -#     =c.submit 'コメントする',class:"commitBtn"
           -# - else
           -#   .not-comment
           -#     コメントはできません  
