@@ -2,9 +2,9 @@ class Product < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :shipping
 
-#  belongs_to :user
-#  belongs_to :category
-#  belongs_to :brand
+ belongs_to :user
+ belongs_to :category
+ belongs_to :brand
  has_one    :address
  has_many   :likes
  has_many   :images

@@ -94,5 +94,5 @@ group :development, :test do
 end
 
 gem 'payjp'
-
+gem 'active_hash'
 gem "jquery-rails"
