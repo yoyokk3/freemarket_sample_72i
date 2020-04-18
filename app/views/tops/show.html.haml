@@ -38,15 +38,9 @@
               %td 
                 = current_user.nickname
             %tr
-              -# %th カテゴリー
-              -# %td
-              -#   =@product.category.category_name
-              -#   = link_to '', '#'
-              -#   %br
-              -#   = link_to '', '#'
-              -#   %br
-              -#   = link_to '', '#'
-              -#   %br
+              %th カテゴリー
+              %td
+                = render "categories/show"
             %tr
               %th 商品のサイズ
               %td S

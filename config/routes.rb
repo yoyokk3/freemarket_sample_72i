@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    registrations: 'users/registrations'
+    omniauth_callbacks: 'users/omniauth_callbacks',
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
   }
   get 'card/new'
   get 'card/show'
@@ -9,12 +11,19 @@ Rails.application.routes.draw do
   
   root to: 'tops#index'
 
-  resources :users
+
   resources :tops do
+    collection do
+      get 'category_children' 
+      get 'category_grandchildren'
+    end
     resources :comments, only: :create
   end
-  
+  resources :categories,only: :index
+  resources :users, only: :new
+
   resources :purchases
+
   resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'
@@ -22,5 +31,4 @@ Rails.application.routes.draw do
       post 'delete', to: 'card#delete'
     end
   end
-  # match '/tops(.:format)' => 'tops#top_create', via: [ :post ]
 end

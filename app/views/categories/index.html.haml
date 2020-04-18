@@ -1,0 +1,9 @@
+- Category.where(ancestry:nil).each do |parent|
+  =link_to  "#" do
+    = parent.name
+
+- Category.where(ancestry:1).each do |child|
+  =link_to  "#" do
+    = child.name
+
+-

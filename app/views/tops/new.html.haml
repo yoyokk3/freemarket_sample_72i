@@ -46,7 +46,9 @@
           .main__form__category__logo__must
             *必須
         .main__form__category__text
-          -# = f.text_field :categories_id, placeholder: "指定なし"
+          = f.collection_select :categories_id, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
+          .main__form__category__text__children
+          .main__form__category__text__grandchildren
 
       .main__form__brand
         .main__form__brand__logo
@@ -54,7 +56,7 @@
             ブランド
           
         .main__form__brand__text
-          -# = f.text_field :brands_id, placeholder: "指定なし" 
+          = f.text_field :brands_id, placeholder: "指定なし" 
       .main__form__status
         .main__form__status__logo
           .main__form__status__logo__fix

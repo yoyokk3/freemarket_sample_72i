@@ -1,6 +1,7 @@
 class TopsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create]
-  
+
+  before_action :set_product, except: [:index, :new, :create, :category_children, :category_grandchildren]
+
   def index
     @products = Product.all.limit(3).order("id DESC")
   end
@@ -8,14 +9,24 @@ class TopsController < ApplicationController
   def new
     @product = Product.new
     @product.images.new
+    @category = Category.where(ancestry:nil)
   end
-  
+
+  def category_children
+    @category_children = Category.find(params[:productcategory]).children 
+  end
+
+ 
+  def category_grandchildren
+    @category_grandchildren = Category.find(params[:productcategory]).children
+  end
+
   def create
     @product = Product.new(product_params)
     if @product.save
       redirect_to root_path
     else
-      render :new
+      redirect_to new_top_path
     end
   end
   
@@ -25,6 +36,8 @@ class TopsController < ApplicationController
     @images  = Image.where(product_id: @product.id)
     @comment = Comment.new
     @comments = @product.comments.includes(:user)
+    @category = Category.where(ancestry:nil)
+
   end
 
   def edit
@@ -49,11 +62,10 @@ class TopsController < ApplicationController
 
 
   private
-
   def product_params
     params.require(:product).permit(:name, :price, :status, :description, :sending,
-                                    :sending_cost, :category_id, :brand_id,
-                                    :exhibition_status,
+                                    :sending_cost, :user_id, :categories_id, :brand_id,
+                                    :exhibition_status,:purchaser_id,
                                     images_attributes: [:image, :_destroy, :id]).merge(users_id:current_user.id)
   end
 
@@ -61,10 +73,8 @@ class TopsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+
   private
-  def products_params
-    params.require(:product).permit(:name, :price, :status, :description, :send_cost, :user_id, :category_id, :brand_id )
-  end
 
   def image_params
     params.require(:image).permit(:image)
