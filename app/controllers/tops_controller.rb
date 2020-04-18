@@ -1,5 +1,5 @@
 class TopsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create]
+  before_action :set_product, except: [:index, :new, :create, :category_children, :category_grandchildren]
 
   def index
     @products = Product.all.limit(3).order("id DESC")
@@ -8,18 +8,31 @@ class TopsController < ApplicationController
   def new
     @product = Product.new
     @product.images.new
+    @category = Category.where(ancestry:nil)
   end
+
+  def category_children
+    @category_children = Category.find(params[:productcategory]).children 
+  end
+
+ 
+  def category_grandchildren
+    @category_grandchildren = Category.find(params[:productcategory]).children
+  end
+
 
   def create
     @product = Product.new(product_params)
     if @product.save
       redirect_to root_path
     else
-      render :new
+      redirect_to new_top_path
     end
   end
 
+
   def show
+    @category = Category.where(ancestry:nil)
   end
 
   def edit
@@ -43,15 +56,16 @@ class TopsController < ApplicationController
 
 
   private
-
   def product_params
     params.require(:product).permit(:name, :price, :status, :description, :sending,
-                                    :sending_cost, :user_id, :category_id, :brand_id,
-                                    :exhibition_status,
-                                    images_attributes: [:image, :_destroy, :id])
+                                    :sending_cost, :user_id, :categories_id, :brand_id,
+                                    :exhibition_status,:purchaser_id,
+                                    images_attributes: [:image, :_destroy, :id]
+    )
   end
 
   def set_product
     @product = Product.find(params[:id])
   end
+
 end

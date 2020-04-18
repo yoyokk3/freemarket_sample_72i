@@ -94,6 +94,11 @@ Productモデルでbrand_new(新品), very_good(良), good(可)とした
 
 
 ## categoriesテーブル
+|Column    |Type  |Options|
+|----------|------|-------|
+|name      |string|       |
+|ancestry  |string|       |
+
 
 |Column         |Type  |Options|
 |---------------|------|-------|
