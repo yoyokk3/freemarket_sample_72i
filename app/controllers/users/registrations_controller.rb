@@ -16,6 +16,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else
       render action: :new
     end
+
+    
+
+    
   end
 
   

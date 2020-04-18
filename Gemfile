@@ -67,7 +67,6 @@ gem 'font-awesome-sass'
 gem 'devise'
 gem 'pry-rails'
 gem 'carrierwave'
-gem 'rmagick'
 gem 'mini_magick'
 gem 'fog-aws'
 gem 'ancestry'
@@ -87,9 +86,13 @@ group :development, :test do
   gem 'rails-i18n'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'omniauth-facebook'
+  gem 'omniauth-google-oauth2'
+  gem "omniauth-rails_csrf_protection"
+  gem 'high_voltage'
+  gem 'dotenv-rails'
 end
 
 gem 'payjp'
-
-gem "jquery-rails"
 gem 'active_hash'
+gem "jquery-rails"
