@@ -61,7 +61,7 @@ class TopsController < ApplicationController
                                     :sending_cost, :user_id, :categories_id, :brand_id,
                                     :exhibition_status,:purchaser_id,
                                     images_attributes: [:image, :_destroy, :id]
-    )
+    ).merge(user_id: current_user.id)
   end
 
   def set_product

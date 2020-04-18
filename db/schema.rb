@@ -44,8 +44,7 @@ ActiveRecord::Schema.define(version: 2020_04_09_083031) do
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "category_name"
-    t.string "category_detail"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ancestry"
@@ -77,7 +76,7 @@ ActiveRecord::Schema.define(version: 2020_04_09_083031) do
     t.integer "sending", null: false
     t.integer "send_cost"
     t.integer "exhibition_status", null: false
-    t.bigint "users_id"
+    t.bigint "user_id"
     t.bigint "categories_id"
     t.bigint "brands_id"
     t.bigint "shippings_id"
