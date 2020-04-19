@@ -1,7 +1,7 @@
 .fourth{
   padding: 60px 100px;
   background-color: #ffffff;
-  height: auto;
+  height: 560px;
   box-sizing: border-box;
   .fourth__top{
     font-size: 27px;
@@ -41,8 +41,8 @@
         margin: 0 10px;
         text-align: left;
       }
-    } 
-  }
+    }   
+  } 
 }
 
 .fifth{
@@ -112,7 +112,7 @@
           text-align: left;
         }
         &__detail{
-          font-size: 16px;
+          font-size: 16px
           &__tax{
             font-size: 10px;
             margin-top: 2px;
