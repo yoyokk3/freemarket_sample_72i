@@ -11,14 +11,17 @@ Rails.application.routes.draw do
   
   root to: 'tops#index'
 
+
   resources :tops do
     collection do
       get 'category_children' 
       get 'category_grandchildren'
     end
+    resources :comments, only: :create
   end
   resources :categories,only: :index
   resources :users, only: :new
+
   resources :purchases
 
   resources :card, only: [:new, :show] do

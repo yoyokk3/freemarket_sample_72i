@@ -2,30 +2,41 @@
   .showMain__content
     .topContent
       .itemBox
-        .itemBox__name カレーライス
+        .itemBox__name 
+          =@product.name
         .itemBox__image
-          %ul
-            %li.itemBox__image__main
-              = image_tag 'top/birdCute.jpeg', alt: 'BirdCute', class: 'itemBox__image__main1'
-              %ul.itemBox__image__main__sub
-                %li
-                  = image_tag 'top/catCute.jpeg', alt: 'CatCute'
-                %li
-                  = image_tag 'top/dogCute.jpeg', alt: 'DogCute'
-                %li
-                  = image_tag 'top/rabbitCute.jpeg', alt: 'RabbitCute'
+          .itemBox__image__main{style:"background-image: url(#{@product.images.first.image});"}
+          .itemBox__image__sub
+            - @product.images.each do |image|
+              %li{style:"background-image: url(#{image.image});"}
+          
+            
         .itemBox__price
-          .itemBox__price--num 1000円
+          .itemBox__price--num 
+            =@product.price
           .itemBox__price--detail
             %span (税込)
             %span 送料込み
-        .itemDetail 犬と猫と鳥とウサギです。家の方針で飼えなくなりました。引き取っていただけませんか。お金入りません。名前はカレーライスです。カレノスケ呼ぶと喜びます。
+        .product-btn
+          - if user_signed_in? && current_user.id == @product.users_id
+            .product-edit-button
+              = link_to "商品情報を編集する",  edit_top_path(@product)
+            .product-del-button
+              = link_to 'この商品を削除する', top_path(@product), method: :delete, data: { confirm: "本当に削除しますか？" }
+          - else
+            .product-buy-button
+              %button.decisionBtn{name: 'button', type: 'submit'}
+                = link_to "購入画面に進む", edit_purchase_path(@product)
+        .itemDetail 
+          =@product.description
         .table
           %table
             %tr 
               %th 出品者
-              %td 加藤陽
+              %td 
+                = current_user.nickname
             %tr
+
               %th カテゴリー
               %td
                 = render "categories/show"
@@ -33,42 +44,91 @@
               %th 商品のサイズ
               %td S
             %tr
-              %th ブランド
-              %td
+            -#あとで使用するかも
+              -# %th ブランド
+              -# %td
+              -#   =@product.brand.brand_name
             %tr
               %th 商品の状態
-              %td 可愛い
+              %td 
+                =@product.status
             %tr
               %th 配送料の負担
-              %td 送料込み(出品者負担)
+              %td 
+                =@product.send_cost
             %tr
               %th 発送元の地域
               %td
-                = link_to '埼玉県', '#'
+                = link_to '兵庫県', '#'
             %tr
               %th 発送日の目安
               %td 即日発送
-        .optionalArea
-          %ul
-            %li#likeBtn.optionalBtn.likeBtn
-              %i.fas.fa-star
-              お気に入り
-          %ul
-            %li.optional
-              = link_to '#' do
-                %i.fa.fa-flag
-                不適切な商品の通報
+      .optionalArea
+        %ul
+          %li#likeBtn.optionalBtn.likeBtn
+            %i.fas.fa-star
+            お気に入り
+        %ul
+          %li.optional
+            = link_to '#' do
+              %i.fa.fa-flag
+              不適切な商品の通報
       .commentBox
-        %form#new_comment.new_comment{"accept-charaset" => "UTF-8", action: "#", method: "post"}
-          %textarea#comment_body{name: 'comment[body]', required: 'required'}
-          %p.noticeMsg
-            相手のことを考え丁寧なコメントを心がけましょう
-            %br
-            不快な言葉などは利用制限や退会処分となることがあります
+        .commentbox__comment
+          %h2 コメント一覧
+          -if @product.comments
+            - @product.comments.each do |comment|
+              .comment-user
+                = comment.user.nickname
+              .comment-text
+                = comment.text
+                .comment-date
+                  %i.far.fa-clock
+                  = comment.created_at.strftime("%Y/%m/%d %H:%M")
+                  = link_to product_comment_path(comment.product.id, comment.id),class: "comment-destroy", method: :delete, data: { turbolinks: false} do
+                    %i.fas.fa-trash-alt
+        
+        %p.noticeMsg
+          相手のことを考え丁寧なコメントを心がけましょう。
           %br
-          %button.commitBtn{name: 'button', type: 'submit'}
-            %i.fa.fa-comment
-            コメントする
+          不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          -#コメント機能実装時に使用
+      -# - if current_user
+      -#   = form_for [@product,@comment] do |c|
+      -#     =c.text_area :comment,class:"comment_body"
+      -#     =c.submit 'コメントする',class:"commitBtn"
+          -# - else
+          -#   .not-comment
+          -#     コメントはできません  
+
+        -# %form#new_comment.new_comment{action: "/tops/#{@product.id}/comments", method: "post"}
+        -#   %textarea#comment_body{name: 'comment[body]', required: 'required'}
+        -#   %p.noticeMsg
+        -#     相手のことを考え丁寧なコメントを心がけましょう
+        -#     %br
+        -#     不快な言葉などは利用制限や退会処分となることがあります
+        -#   %br
+        -#   %button.commitBtn{name: 'button', type: 'submit'}
+        -#     %i.fa.fa-comment
+        -#     コメントする
+      -# .container
+      -#   - if current_user
+      -#     = form_with(model: [@product, @comment], local: true) do |form|
+      -#       = form.text_area :text, placeholder: "コメントする", rows: "2"
+      -#       = form.submit "SEND"
+      -#   - else
+      -#     %strong
+      -#       %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+      -#   .comments
+      -#     %h4 ＜コメント一覧＞
+      -#     - if @comments
+      -#       - @comments.each do |comment|
+      -#         %p
+      -#           %strong
+      -#             = link_to comment.user.nickname, "/users/#{comment.user_id}"
+      -#             ：
+      -#           = comment.text
+
     %ul.links
       %li
         = link_to '#' do

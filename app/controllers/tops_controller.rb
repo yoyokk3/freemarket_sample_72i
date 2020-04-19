@@ -1,10 +1,11 @@
 class TopsController < ApplicationController
+
   before_action :set_product, except: [:index, :new, :create, :category_children, :category_grandchildren]
 
   def index
     @products = Product.all.limit(3).order("id DESC")
   end
-
+  
   def new
     @product = Product.new
     @product.images.new
@@ -20,7 +21,6 @@ class TopsController < ApplicationController
     @category_grandchildren = Category.find(params[:productcategory]).children
   end
 
-
   def create
     @product = Product.new(product_params)
     if @product.save
@@ -29,10 +29,14 @@ class TopsController < ApplicationController
       redirect_to new_top_path
     end
   end
-
-
+  
   def show
+    @product.images
+    
+    @comment = Comment.new
+    @comments = @product.comments.includes(:user)
     @category = Category.where(ancestry:nil)
+
   end
 
   def edit
@@ -47,10 +51,10 @@ class TopsController < ApplicationController
   end
 
   def destroy
-    if @product.destroy
-      redirect_to root_path
+    if @product.user_id == current_user.id && @product.destroy
+      redirect_to root_path 
     else
-      render :update
+      render :edit
     end
   end
 
@@ -60,12 +64,17 @@ class TopsController < ApplicationController
     params.require(:product).permit(:name, :price, :status, :description, :sending,
                                     :sending_cost, :user_id, :categories_id, :brand_id,
                                     :exhibition_status,:purchaser_id,
-                                    images_attributes: [:image, :_destroy, :id]
-    ).merge(user_id: current_user.id)
+                                    images_attributes: [:image, :_destroy, :id]).merge(users_id:current_user.id)
   end
 
   def set_product
     @product = Product.find(params[:id])
   end
 
+
+  private
+
+  def image_params
+    params.require(:image).permit(:image)
+  end
 end

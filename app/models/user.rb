@@ -16,6 +16,7 @@ has_many :sns_credentials
 has_one  :card
 has_many :likes
 has_many :products
+has_many :comments
 has_one  :address, dependent: :destroy
 accepts_nested_attributes_for :address
 

@@ -21,26 +21,32 @@ body{
         &__image{
           margin: 16px 0px 0px;
             &__main{
+              width: 600px;
+              height: 400px;
               display: flex;
+              background-size: cover;
               flex-direction: column;
-              .itemBox__image__main1{
-                object-fit: cover;
-                height: 346px;
-              }
-              &__sub{
+              margin: 0 auto;
+              
+            }
+            &__sub{
                 display: flex;
                 justify-content: center;
+                background-size: cover;
                 margin-top: 10px;
+                height: 100px;
                 li{
                   width: 25%;
                   margin-right: 10px;
+                  background-size: cover;
+                  list-style: none;
                   img{
                     object-fit: cover;
                     height: 93px;
                     width: 155px;
                   }
                 }
-              }
+              
             }
         }
         &__price{
@@ -55,6 +61,26 @@ body{
           }
           &--detail{
             font-size: 16px;
+          }
+        }
+        .product-btn{
+          display: flex;
+          justify-content: space-around;
+          .product-edit-button{
+            text-align: left;
+          }
+          .product-del-button{
+            text-align: right;
+          }
+          
+          .product-buy-button{
+            text-align: center;
+            button[type="submit"]{
+              width: 200px;
+              font-size: 24px;
+              background-color: red;
+              margin-bottom: 20px;
+            }
           }
         }
         .itemDetail{
@@ -117,10 +143,34 @@ body{
         background-color: #fff;
         margin: 10px 0;
         text-align: center;
-        #comment_body{
-          width: 96%;
-          min-height: 104px;
-          padding: 10px;
+        &__comment {
+          margin-bottom: 50px;
+          .comment-user{
+            font-size: 15px;
+            text-align: left;
+            padding-top: 20px;
+            padding-left: 5px;
+            font-weight: bold;
+          }
+          .comment-text {
+            border: 1px solid #f5f5f5;
+            border-radius: 10px;
+            background: #f5f5f5;
+            font-size: 15px;
+            padding: 20px;
+            text-align: left;
+            margin-top: 5px;
+          }
+          .comment-date {
+            color: silver;
+            padding-top: 15px;
+            font-size: 13px;
+          }
+          .comment-destroy {
+            text-align: right;
+            color: silver;
+            float: right;
+          }
         }
         p{
           padding: 8px;
@@ -128,6 +178,11 @@ body{
           background-color: #f8f8f8;
           margin: 10px 0;
           text-align: left;
+        }
+        .comment_body{
+          width: 96%;
+          min-height: 104px;
+          padding: 10px;
         }
         .commitBtn{
           line-height: 48px;
