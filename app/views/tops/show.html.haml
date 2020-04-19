@@ -10,9 +10,7 @@
             - @product.images.each do |image|
               %li{style:"background-image: url(#{image.image});"}
           
-            -#   %li{style:"background-image: url(#{@product.images.third.image});"}
-            -# -if @product.images.fourth.image.present?
-            -#   %li{style:"background-image: url(#{@product.images.fourth.image});"} 
+            
         .itemBox__price
           .itemBox__price--num 
             =@product.price
@@ -38,19 +36,12 @@
               %td 
                 = current_user.nickname
             %tr
-              -# %th カテゴリー
-              -# %td
-              -#   =@product.category.category_name
-              -#   = link_to '', '#'
-              -#   %br
-              -#   = link_to '', '#'
-              -#   %br
-              -#   = link_to '', '#'
-              -#   %br
+            
             %tr
               %th 商品のサイズ
               %td S
             %tr
+            -#あとで使用するかも
               -# %th ブランド
               -# %td
               -#   =@product.brand.brand_name
@@ -98,6 +89,7 @@
           相手のことを考え丁寧なコメントを心がけましょう。
           %br
           不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          -#コメント機能実装時に使用
       -# - if current_user
       -#   = form_for [@product,@comment] do |c|
       -#     =c.text_area :comment,class:"comment_body"

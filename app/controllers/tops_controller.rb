@@ -20,9 +20,8 @@ class TopsController < ApplicationController
   end
   
   def show
+    @product.images
     
-    @product = Product.find(params[:id])
-    @images  = Image.where(product_id: @product.id)
     @comment = Comment.new
     @comments = @product.comments.includes(:user)
   end
@@ -39,12 +38,12 @@ class TopsController < ApplicationController
   end
 
   def destroy
-    # @product = Product.find(params{:id})
-    @product.destroy
-    redirect_to root_path
-    # else
-    #   render :update
-    # end
+    product=Product.find(params[:id])
+    if product.destroy
+      redirect_to root_path, notice: '削除しました'
+    else
+      render :edit
+    end
   end
 
 
