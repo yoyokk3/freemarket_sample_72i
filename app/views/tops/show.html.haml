@@ -18,7 +18,7 @@
             %span (税込)
             %span 送料込み
         .product-btn
-          - if user_signed_in? && current_user.id == @product.users_id
+          - if user_signed_in? && current_user.id == @product.user_id
             .product-edit-button
               = link_to "商品情報を編集する",  edit_top_path(@product)
             .product-del-button
