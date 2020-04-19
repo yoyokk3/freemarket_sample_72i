@@ -32,7 +32,6 @@ class TopsController < ApplicationController
   
   def show
     @product.images
-    
     @comment = Comment.new
     @comments = @product.comments.includes(:user)
     @category = Category.where(ancestry:nil)

@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources :users, only: :new
 
   resources :purchases
+  resources :products, only: :edit
 
   resources :card, only: [:new, :show] do
     collection do
