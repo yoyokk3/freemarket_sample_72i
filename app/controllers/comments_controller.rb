@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
       redirect_to top_comments_path 
     else
       redirect_back(fallback_location: root_path)
+    end
   end
 
   private
