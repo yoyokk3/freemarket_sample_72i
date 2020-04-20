@@ -11,7 +11,8 @@
 
   .mypagebox__rightbox
     .mypagebox__rightbox--namebox 
-      .mypagebox__rightbox--name ユーザーネーム
+      .mypagebox__rightbox--name
+        = @user.first_name + "様"
     .mypagebox__rightbox--center
       .mypagebox__rightbox--notification お知らせ
       .mypagebox__rightbox--Todo やることリスト
