@@ -123,13 +123,10 @@ Productモデルでbrand_new(新品), very_good(良), good(可)とした
 
 |Column        |Type     |Options                       |
 |--------------|---------|------------------------------|
-|card_number   |integer  |null: false                   |
-|cbrand        |string   |null: false                   |
-|deadline_year |integer  |null: false                   |
-|deadline_manth|integer  |null: false                   |
-|name-onCard   |string   |null: false                   |
-|security_code |integer  |null: false                   |
-|user_id       |reference|null: false, foreign_key: true|
+|user_id       |integer  |null: false                   |
+|customer_id   |string   |null: false                   |
+|card_id       |integer  |null: false                   |
+
 
 ### Association
 - belongs_to :user
