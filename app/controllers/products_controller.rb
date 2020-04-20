@@ -6,5 +6,4 @@ def edit
   @category = Category.all
 end
 
-
 end

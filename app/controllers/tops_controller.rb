@@ -35,7 +35,6 @@ class TopsController < ApplicationController
     @comment = Comment.new
     @comments = @product.comments.includes(:user)
     @category = Category.where(ancestry:nil)
-
   end
 
   def edit
