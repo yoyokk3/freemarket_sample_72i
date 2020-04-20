@@ -1,8 +1,9 @@
 .mypagebox
   .mypagebox__leftcolumn
-    .mypagebox__leftcolumn--mypage マイページ
+    .mypagebox__leftcolumn--mypage
+      = link_to "マイページ", '/users/show'
     .mypagebox__leftcolumn--cardreg
-      = link_to "カード登録/変更", 'card/new'
+      = link_to "カード登録/変更", new_card_path
 
   .logoutbox
     .logoutbox__text
