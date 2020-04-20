@@ -29,4 +29,14 @@ Rails.application.routes.draw do
       post 'pay', to: 'cards#pay'
     end
   end
+
+  resources :products do
+    resources :purchases, only: [:index] do
+      collection do
+        get 'done', to: 'purchases#done'
+        post 'pay', to: 'purchases#pay'
+      end
+    end
+  end
+
 end
