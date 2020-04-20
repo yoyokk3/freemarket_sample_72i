@@ -2,7 +2,7 @@
   .fifth__category-box__list
     -if current_user
       = link_to top_path(product.id) do
-        .fifth__category-box__list__img{ style: "background-image: url(#{@product.images.first.image});"}
+        .fifth__category-box__list__img{ style: "background-image: url(#{product.images.first.image});"}
           -if product.purchaser_id.present? 
             .fifth__category-box__list__img__sold
               .fifth__category-box__list__img__sold__inner SOLD
@@ -16,7 +16,7 @@
               (税込)
     -else
       = link_to new_user_registration_path do
-        .fifth__category-box__list__img{ style: "background-image: url(#{@product.images.first.image});"}
+        .fifth__category-box__list__img{ style: "background-image: url(#{product.images.first.image});"}
           -if product.purchaser_id.present? 
             .fifth__category-box__list__img__sold
               .fifth__category-box__list__img__sold__inner SOLD
