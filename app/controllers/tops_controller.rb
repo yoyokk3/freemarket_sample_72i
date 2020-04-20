@@ -64,7 +64,7 @@ class TopsController < ApplicationController
     params.require(:product).permit(:name, :price, :status, :description, :sending,
                                     :sending_cost, :user_id, :categories_id, :brand_id,
                                     :exhibition_status,:purchaser_id,
-                                    images_attributes: [:image, :_destroy, :id]).merge(users_id:current_user.id)
+                                    images_attributes: [:image, :_destroy, :id]).merge(user_id:current_user.id)
   end
 
   def set_product

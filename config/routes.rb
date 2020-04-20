@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       get 'category_children' 
       get 'category_grandchildren'
     end
-    resources :comments, only: :create
+    resources :comments, only: [:create, :destroy]
   end
   resources :categories,only: :index
   resources :users, only: :new

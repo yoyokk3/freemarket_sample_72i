@@ -18,7 +18,7 @@
             %span (税込)
             %span 送料込み
         .product-btn
-          - if user_signed_in? && current_user.id == @product.users_id
+          - if user_signed_in? && current_user.id == @product.user_id
             .product-edit-button
               = link_to "商品情報を編集する",  edit_top_path(@product)
             .product-del-button
@@ -40,9 +40,7 @@
               %th カテゴリー
               %td
                 = render "categories/show"
-            %tr
-              %th 商品のサイズ
-              %td S
+            
             %tr
             -#あとで使用するかも
               -# %th ブランド
@@ -85,7 +83,7 @@
                 .comment-date
                   %i.far.fa-clock
                   = comment.created_at.strftime("%Y/%m/%d %H:%M")
-                  = link_to product_comment_path(comment.product.id, comment.id),class: "comment-destroy", method: :delete, data: { turbolinks: false} do
+                  = link_to top_comment_path(comment.product.id, comment.id),class: "comment-destroy", method: :delete, data: { turbolinks: false} do
                     %i.fas.fa-trash-alt
         
         %p.noticeMsg
@@ -93,24 +91,29 @@
           %br
           不快な言葉遣いなどは利用制限や退会処分となることがあります。
           -#コメント機能実装時に使用
-      -# - if current_user
-      -#   = form_for [@product,@comment] do |c|
-      -#     =c.text_area :comment,class:"comment_body"
-      -#     =c.submit 'コメントする',class:"commitBtn"
-          -# - else
-          -#   .not-comment
-          -#     コメントはできません  
+        .container
+        - if current_user
+          = form_with(model: [@top,Comment.new], local: true,) do |form|
+            = form.text_area :text, placeholder: "コメントする", rows: "2"
+            = form.submit "SEND"
+        - else
+          %strong
+            %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+        -# - if current_user
+        -#   = form_for [@product,@comment] do |c|
+        -#   =c.text_area :@comment,class:"comment_body"
+        -#   =c.submit 'コメントする',class:"commitBtn"
+        -# - else
+        -#   .not-comment
+            コメントはできません  
 
-        -# %form#new_comment.new_comment{action: "/tops/#{@product.id}/comments", method: "post"}
-        -#   %textarea#comment_body{name: 'comment[body]', required: 'required'}
-        -#   %p.noticeMsg
-        -#     相手のことを考え丁寧なコメントを心がけましょう
-        -#     %br
-        -#     不快な言葉などは利用制限や退会処分となることがあります
-        -#   %br
-        -#   %button.commitBtn{name: 'button', type: 'submit'}
-        -#     %i.fa.fa-comment
-        -#     コメントする
+      -#   %form#new_comment.new_comment{action: "/tops/#{@product.id}/comments", method: "post"}
+      -#     %textarea#comment_body{name: 'comment[body]', required: 'required'}
+  
+      -#     %br
+      -#     %button.commitBtn{name: 'button', type: 'submit'}
+      -#       %i.fa.fa-comment
+      -#       コメントする
       -# .container
       -#   - if current_user
       -#     = form_with(model: [@product, @comment], local: true) do |form|
