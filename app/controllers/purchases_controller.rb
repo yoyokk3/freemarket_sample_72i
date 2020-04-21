@@ -1,6 +1,6 @@
 class PurchasesController < ApplicationController
-  require 'payjp'#Payjpの読み込み
-  before_action :set_card, :set_item
+  require 'payjp'
+  before_action :set_card, :set_product
 
   def new
     @user = User.new
@@ -33,10 +33,8 @@ class PurchasesController < ApplicationController
 
 
   def  done
-    #   @product = Product.find(params[:id])
-    #   @product.update( purchaser_id: current_user.id)
-    # rescue ActiveRecord::RecordNotFound => e
-    #   redirect_to :root, alert: '購入に失敗しました'
+    @product_purchaser = Product.find(params[:product_id])
+    @product_purchaser.update( purchaser_id: current_user.id)
   end
 
   private
@@ -48,7 +46,7 @@ class PurchasesController < ApplicationController
     @card = Card.find_by(user_id: current_user.id)
   end
 
-  def set_item
+  def set_product
     @product = Product.find(params[:product_id])
   end
 
