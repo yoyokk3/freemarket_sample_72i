@@ -10,11 +10,31 @@
       width: 280px;
       height: 30px;
       border-style: ridge;
-      padding: 12px;
-      vertical-align: middle;
-      line-height: 30px;
+      padding: 12px; 
+        a{
+          text-decoration: none;
+          line-height: 30px;
+          color: black;
+        }
+        a:hover {
+          color: orange;
+        }
     }
     &--cardreg {
+      width: 280px;
+      height: 30px;
+      border-style: ridge;
+      padding: 12px; 
+        a{
+          text-decoration: none;
+          line-height: 30px;
+          color: black;
+        }
+        a:hover {
+          color: orange;
+        }
+    }
+    &--cardconf {
       width: 280px;
       height: 30px;
       border-style: ridge;
@@ -65,10 +85,12 @@
       position: absolute;
       margin-top: 0px;
       border-bottom: ridge;
+      font-size: x-large;
     }
       &--name {
         background-color: white;
         margin-top: 40px;
+        
       }
     &--notification {
       margin-top: 100px;

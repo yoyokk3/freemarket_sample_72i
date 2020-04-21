@@ -4,15 +4,13 @@
       = link_to "マイページ", '/users/show'
     .mypagebox__leftcolumn--cardreg
       = link_to "カード登録/変更", new_card_path
-    .mypagebox__leftcolumn--cardconf
-      = link_to "カード情報確認"
     .mypagebox__leftcolumn--logout
       = link_to "ログアウト", '/users/logout'
 
   .mypagebox__rightbox
     .mypagebox__rightbox--namebox 
       .mypagebox__rightbox--name
-        = @user.first_name + "様"
+        = @user.first_name + " 様"
     .mypagebox__rightbox--center
       .mypagebox__rightbox--notification お知らせ
       .mypagebox__rightbox--Todo やることリスト
