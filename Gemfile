@@ -86,13 +86,14 @@ group :development, :test do
   gem 'rails-i18n'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
-  gem 'omniauth-facebook', ' ~> 4.0.0'
-  gem 'omniauth-google-oauth2'
-  gem "omniauth-rails_csrf_protection"
   gem 'high_voltage'
-  gem 'dotenv-rails'
 end
 
+gem 'omniauth', '~>1.9.1'
+gem 'omniauth-facebook', ' ~> 4.0.0'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
+gem 'dotenv-rails'
 gem 'payjp'
 gem 'active_hash'
 gem "jquery-rails"

@@ -166,3 +166,15 @@ Productモデルでbrand_new(新品), very_good(良), good(可)とした
 
 ### Association
 - belongs_to :user
+
+## commentsテーブル
+
+|Column     |Type     |Options                       |
+|-----------|---------|------------------------------|
+|user_id    |integer  |null: false, foreign_key: true|
+|product_id |integer  |null: false, foreign_key: true|
+|comment    |text     |null:false                    |
+
+### Association
+- berongs_to :user
+- berongs_to :product
