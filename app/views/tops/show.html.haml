@@ -72,14 +72,14 @@
               %i.fa.fa-flag
               不適切な商品の通報
       .commentBox
-        .commentbox__comment
+        .commentBox__comment
           %h2 コメント一覧
           -if @product.comments
             - @product.comments.each do |comment|
               .comment-user
                 = comment.user.nickname
               .comment-text
-                = comment.text
+                = comment.comment
                 .comment-date
                   %i.far.fa-clock
                   = comment.created_at.strftime("%Y/%m/%d %H:%M")
@@ -93,9 +93,9 @@
           -#コメント機能実装時に使用
         .container
         - if current_user
-          = form_with(model: [@top,Comment.new], local: true,) do |form|
-            = form.text_area :text, placeholder: "コメントする", rows: "2"
-            = form.submit "SEND"
+          = form_with(model: [@product, @comment],url:top_comments_path(@product), method: :post, local: true,) do |form|
+            = form.text_area :comment, placeholder: "コメントする",size: "70x4"
+            = form.submit 'コメントする', class: "btn"
         - else
           %strong
             %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※

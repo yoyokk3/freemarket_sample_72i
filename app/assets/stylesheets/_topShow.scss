@@ -160,16 +160,16 @@ body{
             padding: 20px;
             text-align: left;
             margin-top: 5px;
-          }
-          .comment-date {
-            color: silver;
-            padding-top: 15px;
-            font-size: 13px;
-          }
-          .comment-destroy {
-            text-align: right;
-            color: silver;
-            float: right;
+            .comment-date {
+              color: silver;
+              padding-top: 15px;
+              font-size: 13px;
+            }
+            .comment-destroy {
+              text-align: right;
+              color: silver;
+              float: right;
+            }
           }
         }
         p{
@@ -179,12 +179,20 @@ body{
           margin: 10px 0;
           text-align: left;
         }
-        .comment_body{
+        .container{
           width: 96%;
-          min-height: 104px;
+          min-height: 14px;
           padding: 10px;
         }
-        .commitBtn{
+        .comment{
+          background: #FFF6DE;
+          border: 1px solid #FFF6DE;
+          border-radius: 4px;
+          text-align: left;
+          padding: 10px 10px;
+          margin: 10px 0;
+        }
+        .btn{
           line-height: 48px;
           background: #3CCACE;
           border: 1px solid #3CCACE;
@@ -193,7 +201,7 @@ body{
           font-size: 18px;
           border-radius: 100px;
         }
-        .commitBtn:hover{
+        .btn:hover{
           cursor: pointer;
         }
       }
