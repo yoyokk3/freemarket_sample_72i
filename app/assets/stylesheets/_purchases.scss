@@ -135,3 +135,61 @@ body{
     }
   }
 }
+
+.purchased__confirmation__messagebox {
+  height: 480px;
+  text-align: center;
+  .buy-content__attention {
+    font-size: xx-large;
+  }
+  .buy-content__attention__title {
+    margin-top: 5px;
+    font-size: x-large;
+  }
+  .buy-content__item {
+    .buy-content__item__inner {
+      .buy-item-main {
+        .buy__item__image {
+          margin-top: 5px;
+        }
+        .buy-item-detail {
+          .buy-item-name {
+            .buy-price {
+              margin-top: 5px;
+            }
+            .shipping-free {
+              margin-top: 5px;
+            }
+          }
+        }
+        .buy-content__item {
+          .buy-form {
+            .buy-price-table {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              .buy-price-table__left {
+                margin-top: 5px;
+                margin-right: 10px;
+              }
+              .buy-price-table__right {
+                margin-top: 5px;  
+              }
+            }
+          }
+            .buy-content__user-info__submit {
+              margin-top: 50px;
+              a {
+                font-size: x-large;
+                font-weight: bold;
+                text-decoration: none;
+                color: white;
+                background-color: red;
+                padding: 10px 50px;
+              }
+            }
+        }
+      }
+    }
+  }
+}
