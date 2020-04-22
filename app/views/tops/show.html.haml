@@ -28,7 +28,7 @@
             - else
               .product-buy-button
                 %button.decisionBtn{name: 'button', type: 'submit'}
-                  = link_to "購入画面に進む", edit_purchase_path(@product)
+                  = link_to "購入画面に進む", product_purchases_path(@product)
 
         .itemDetail 
           =@product.description
