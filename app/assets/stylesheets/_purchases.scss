@@ -139,54 +139,54 @@ body{
 .purchased__confirmation__messagebox {
   height: 480px;
   text-align: center;
-  .buy-content__attention {
+  &__attention {
     font-size: xx-large;
   }
-  .buy-content__attention__title {
+  &__title {
     margin-top: 5px;
     font-size: x-large;
   }
-  .buy-content__item {
-    .buy-content__item__inner {
-      .buy-item-main {
-        .buy__item__image {
+  .buy__content__item {
+    &__inner {
+      &__main {
+        &__image {
           margin-top: 5px;
         }
-        .buy-item-detail {
-          .buy-item-name {
-            .buy-price {
+        &__detail {
+          &__name {
+            &--price {
               margin-top: 5px;
             }
-            .shipping-free {
+            &--shipping-fee {
               margin-top: 5px;
             }
           }
         }
-        .buy-content__item {
-          .buy-form {
-            .buy-price-table {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              .buy-price-table__left {
-                margin-top: 5px;
-                margin-right: 10px;
-              }
-              .buy-price-table__right {
-                margin-top: 5px;  
-              }
-            }
+      }
+      &__lower {
+        &__form {
+          &__table {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &--left {
+            margin-top: 5px;
+            margin-right: 10px;
           }
-            .buy-content__user-info__submit {
-              margin-top: 50px;
-              a {
-                font-size: x-large;
-                font-weight: bold;
-                text-decoration: none;
-                color: white;
-                background-color: red;
-                padding: 10px 50px;
-              }
+          &--right {
+            margin-top: 5px;  
+          }
+          }
+        }
+        &__form__submit {
+            margin-top: 50px;
+            a {
+              font-size: x-large;
+              font-weight: bold;
+              text-decoration: none;
+              color: white;
+              background-color: red;
+              padding: 10px 50px;
             }
         }
       }

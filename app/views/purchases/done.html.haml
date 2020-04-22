@@ -1,27 +1,27 @@
 .purchased__confirmation__messagebox
-  %h1.buy-content__attention
+  %h1.purchased__confirmation__messagebox__attention
     %i.far.fa-clock
       発送をお待ちください
-    %h2.buy-content__attention__title
+    %h2.purchased__confirmation__messagebox__title
       購入が完了しました
-    .buy-content__item
-      .buy-content__item__inner
-        .buy-item-main
-          .buy__item__image{style:"background-image: url(#{@product.images.first.image});"}
-          .buy-item-detail
-            .buy-item-name
+    .buy__content__item
+      .buy__content__item__inner
+        .buy__content__item__inner__main
+          .buy__content__item__inner__main__image{style:"background-image: url(#{@product.images.first.image});"}
+          .buy__content__item__inner__main__detail
+            .buy__content__item__inner__main__detail__name
               = @product.name
-              %p.buy-price
+              %p.buy__content__item__inner__main__detail__name--price
                 %span 
                   = "¥#{@product.price.to_s}"
                 %span
-                  .shipping-free (税込) 送料込み
-          .buy-content__item
-            %form.buy-form
-              .buy-price-table
-                .buy-price-table__left
+                  .buy__content__item__inner__main__detail__name--shipping-fee (税込) 送料込み
+          .buy__content__item__inner__lower
+            %form.buy__content__item__inner__lower__form
+              .buy__content__item__inner__lower__form__table
+                .buy__content__item__inner__lower__form__table--left
                   支払金額
-                .buy-price-table__right
+                .buy__content__item__inner__lower__form__table--right
                   = "¥#{@product.price.to_s}"
-              .buy-content__user-info__submit
+              .buy__content__item__inner__lower__form__submit
                 = link_to "トップページへ戻る", root_path, class: 'buy-content__user-info__submit__button'
