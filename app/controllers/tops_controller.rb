@@ -40,6 +40,7 @@ class TopsController < ApplicationController
   end
 
   def edit
+    @product = Product.find(params[:id])
   end
 
   def update
@@ -52,7 +53,7 @@ class TopsController < ApplicationController
 
   def destroy
     if @product.user_id == current_user.id && @product.destroy
-      redirect_to root_path 
+      redirect_to root_path
     else
       render :edit
     end
