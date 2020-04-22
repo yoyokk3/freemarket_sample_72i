@@ -135,3 +135,61 @@ body{
     }
   }
 }
+
+.purchased__confirmation__messagebox {
+  height: 480px;
+  text-align: center;
+  &__attention {
+    font-size: xx-large;
+  }
+  &__title {
+    margin-top: 5px;
+    font-size: x-large;
+  }
+  .buy__content__item {
+    &__inner {
+      &__main {
+        &__image {
+          margin-top: 5px;
+        }
+        &__detail {
+          &__name {
+            &--price {
+              margin-top: 5px;
+            }
+            &--shipping-fee {
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+      &__lower {
+        &__form {
+          &__table {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &--left {
+            margin-top: 5px;
+            margin-right: 10px;
+          }
+          &--right {
+            margin-top: 5px;  
+          }
+          }
+        }
+        &__form__submit {
+            margin-top: 50px;
+            a {
+              font-size: x-large;
+              font-weight: bold;
+              text-decoration: none;
+              color: white;
+              background-color: red;
+              padding: 10px 50px;
+            }
+        }
+      }
+    }
+  }
+}

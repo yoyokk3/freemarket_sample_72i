@@ -1,7 +1,7 @@
-.mypagebox
-  .mypagebox__leftcolumn
-    .mypagebox__leftcolumn--mypage マイページ
-    .mypagebox__leftcolumn--cardreg
-      = link_to "カード登録/変更", 'card/new'
-    .mypagebox__leftcolumn--logout
-      = link_to "ログアウト", 'logout'
+.mypagebox__leftcolumn
+  .mypagebox__leftcolumn--mypage
+    = link_to "マイページ", users_show_path
+  .mypagebox__leftcolumn--cardreg
+    = link_to "カード登録/変更", card_new_path
+  .mypagebox__leftcolumn--logout
+    = link_to "ログアウト", 'logout'

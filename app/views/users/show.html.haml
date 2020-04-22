@@ -1,14 +1,10 @@
 .mypagebox
-  .mypagebox__leftcolumn
-    .mypagebox__leftcolumn--mypage マイページ
-    .mypagebox__leftcolumn--cardreg
-      = link_to "カード登録/変更", 'card/new'
-    .mypagebox__leftcolumn--logout
-      = link_to "ログアウト", 'logout'
+  = render "mypageSidebar"
 
   .mypagebox__rightbox
     .mypagebox__rightbox--namebox 
-      .mypagebox__rightbox--name ユーザーネーム
+      .mypagebox__rightbox--name
+        = current_user.first_name + " 様"
     .mypagebox__rightbox--center
       .mypagebox__rightbox--notification お知らせ
       .mypagebox__rightbox--Todo やることリスト

@@ -1,8 +1,5 @@
 .mypagebox
-  .mypagebox__leftcolumn
-    .mypagebox__leftcolumn--mypage マイページ
-    .mypagebox__leftcolumn--cardreg
-      = link_to "カード登録/変更", 'card/new'
+  = render "mypageSidebar"
 
   .logoutbox
     .logoutbox__text
