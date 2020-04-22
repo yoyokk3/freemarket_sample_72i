@@ -93,7 +93,7 @@
           相手のことを考え丁寧なコメントを心がけましょう。
           %br
           不快な言葉遣いなどは利用制限や退会処分となることがあります。
-          -#コメント機能実装時に使用
+       
         .container
         - if current_user
           = form_with(model: [@product, @comment],url:top_comments_path(@product), method: :post, local: true,) do |form|
@@ -102,38 +102,6 @@
         - else
           %strong
             %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
-        -# - if current_user
-        -#   = form_for [@product,@comment] do |c|
-        -#   =c.text_area :@comment,class:"comment_body"
-        -#   =c.submit 'コメントする',class:"commitBtn"
-        -# - else
-        -#   .not-comment
-            コメントはできません  
-
-      -#   %form#new_comment.new_comment{action: "/tops/#{@product.id}/comments", method: "post"}
-      -#     %textarea#comment_body{name: 'comment[body]', required: 'required'}
-  
-      -#     %br
-      -#     %button.commitBtn{name: 'button', type: 'submit'}
-      -#       %i.fa.fa-comment
-      -#       コメントする
-      -# .container
-      -#   - if current_user
-      -#     = form_with(model: [@product, @comment], local: true) do |form|
-      -#       = form.text_area :text, placeholder: "コメントする", rows: "2"
-      -#       = form.submit "SEND"
-      -#   - else
-      -#     %strong
-      -#       %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
-      -#   .comments
-      -#     %h4 ＜コメント一覧＞
-      -#     - if @comments
-      -#       - @comments.each do |comment|
-      -#         %p
-      -#           %strong
-      -#             = link_to comment.user.nickname, "/users/#{comment.user_id}"
-      -#             ：
-      -#           = comment.text
 
     %ul.links
       %li
