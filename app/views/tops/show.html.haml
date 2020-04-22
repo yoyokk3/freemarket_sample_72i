@@ -86,8 +86,10 @@
                 .comment-date
                   %i.far.fa-clock
                   = comment.created_at.strftime("%Y/%m/%d %H:%M")
-                  = link_to top_comment_path(comment.product.id, comment.id),class: "comment-destroy", method: :delete, data: { turbolinks: false} do
-                    %i.fas.fa-trash-alt
+                -if current_user
+                  - if user_signed_in? && current_user.id == comment.user_id
+                    = link_to top_comment_path(comment.product.id, comment.id),class: "comment-destroy", method: :delete, data: { turbolinks: false} do
+                      %i.fas.fa-trash-alt
         
         %p.noticeMsg
           相手のことを考え丁寧なコメントを心がけましょう。
