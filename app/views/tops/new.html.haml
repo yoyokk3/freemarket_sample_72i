@@ -1,0 +1,106 @@
+.main
+  = form_for @product, url: tops_path, method: :post do |f|
+    #image-box
+      #previews
+        - if @product.persisted?
+          - @product.images.each_with_index do |image, i|
+            = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
+      = f.fields_for :images do |image|
+        .file_groups
+          .js-file_group{"data-index" => "#{image.index}"}
+            = image.label :image, class: 'img_upload' do
+              %span 画像を選択
+              = image.file_field :image, class: 'js-file'
+              %br/
+            %span.js-remove 削除
+          - if @product.persisted?
+            = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+      - if @product.persisted?
+        .js-file_group{"data-index" => "#{@product.images.count}"}
+          = file_field_tag :image, name: "product[images_attributes][#{@product.images.count}][image]", class: 'js-file'
+          .js-remove 削除
+
+    .main__form
+      .main__form__name
+        .main__form__name__logo
+          .main__form__name__logo__fix
+            商品名
+          .main__form__name__logo__must
+            *必須
+        .main__form__name__text
+          = f.text_field :name, placeholder: "40文字まで"
+
+      .main__form__description
+        .main__form__description__logo
+          .main__form__description__logo__fix
+            商品説明
+          .main__form__description__logo__must
+            *必須
+        .main__form__description__text
+          = f.text_area :description, placeholder:"色・素材・重さ・低下・注意点などを記載しましょう（１０００文字まで）例：先月に５４００円で購入したセーターです。着用回数は５回未満です。素材はカシミヤなので着心地がいいです。", size: "67x13"
+
+      .main__form__category
+        .main__form__category__logo
+          .main__form__category__logo__fix
+            カテゴリー
+          .main__form__category__logo__must
+            *必須
+        .main__form__category__text
+          = f.collection_select :categories_id, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
+          .main__form__category__text__children
+          .main__form__category__text__grandchildren
+
+      .main__form__brand
+        .main__form__brand__logo
+          .main__form__brand__logo__fix
+            ブランド
+          
+        .main__form__brand__text
+          = f.text_field :brands_id, placeholder: "指定なし" 
+      .main__form__status
+        .main__form__status__logo
+          .main__form__status__logo__fix
+            商品の状態
+          .main__form__status__logo__must
+            *必須
+        .main__form__status__text
+        .main__form__status__text
+          = f.select :status, {新品: 1, 良: 2, 可: 3}
+
+
+
+      .main__form__sendcost
+        .main__form__sendcost__logo
+          .main__form__sendcost__logo__fix
+            配送料の負担
+          .main__form__sendcost__logo__must
+            *必須
+        .main__form__sendcost__text
+          = f.select :send_cost, {送料込み（出品者が負担）: 1, 送料別（購入者が負担）: 2}
+      .main__form__sending
+        .main__form__sending__logo
+          .main__form__sending__logo__fix
+            配送方法
+        .main__form__sending__text
+          = f.collection_select :shippings_id, Shipping.all, :id, :name
+      .main__form__date
+        .main__form__date__logo
+          .main__form__date__logo__fix
+            発送日の目安
+          .main__form__date__logo__must
+            *必須
+        .main__form__date__text
+          = f.text_field :sending, placeholder: "支払い後、１〜２日目安で発送" 
+      .main__form__price
+        .main__form__price__logo
+          .main__form__price__logo__fix
+            商品価格
+          .main__form__price__logo__must
+            *必須
+        .main__form__price__text
+          = f.number_field :price
+      .main__form__btn
+        = f.submit "出品する"
+      -# %p= f.hidden_field :exhibition_status, {:value => "1"}
+      %p
+        = f.hidden_field :exhibition_status, :value => 1
