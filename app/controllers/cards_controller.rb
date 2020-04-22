@@ -2,13 +2,12 @@ class CardsController < ApplicationController
 
   def new
     card = Card.where(user_id: current_user.id)
-    redirect_to card_path(current_user.id) if card.exists?
+    redirect_to action: "show" if card.exists?
   end
 
 
   def pay
     Payjp.api_key = Rails.application.credentials[:PAYJP_PRIVATE_KEY]
-    #保管した顧客IDでpayjpから情報取得
     if params['payjp-token'].blank?
       redirect_to new_card_path
     else
@@ -36,7 +35,8 @@ class CardsController < ApplicationController
   end
 
   def show
-    if @card.blank?
+    card = Card.find_by(user_id: current_user.id)
+    if card.blank?
       redirect_to new_card_path 
     else
       Payjp.api_key = Rails.application.credentials[:PAYJP_PRIVATE_KEY]
@@ -48,6 +48,5 @@ class CardsController < ApplicationController
   def set_card
     @card = Card.find_by(user_id: current_user.id)
   end
-
 
 end

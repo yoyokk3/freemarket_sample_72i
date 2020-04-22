@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
-  get 'card/new'
+  get 'cards/new'
   get 'card/show'
   get 'users/show'
   get 'users/logout'
@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
   resources :cards, only: [:new, :show, :destroy] do
     collection do
+      post 'show', to: 'cards#show'
       post 'pay', to: 'cards#pay'
     end
   end
