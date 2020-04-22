@@ -18,6 +18,7 @@
             %span (税込)
             %span 送料込み
         .product-btn
+
           -if current_user
             - if user_signed_in? && current_user.id == @product.user_id
               .product-edit-button
@@ -28,6 +29,7 @@
               .product-buy-button
                 %button.decisionBtn{name: 'button', type: 'submit'}
                   = link_to "購入画面に進む", edit_purchase_path(@product)
+
         .itemDetail 
           =@product.description
         .table
@@ -41,9 +43,7 @@
               %th カテゴリー
               %td
                 = render "categories/show"
-            %tr
-              %th 商品のサイズ
-              %td S
+            
             %tr
             -#あとで使用するかも
               -# %th ブランド
@@ -75,60 +75,33 @@
               %i.fa.fa-flag
               不適切な商品の通報
       .commentBox
-        .commentbox__comment
+        .commentBox__comment
           %h2 コメント一覧
           -if @product.comments
             - @product.comments.each do |comment|
               .comment-user
                 = comment.user.nickname
               .comment-text
-                = comment.text
+                = comment.comment
                 .comment-date
                   %i.far.fa-clock
                   = comment.created_at.strftime("%Y/%m/%d %H:%M")
-                  = link_to product_comment_path(comment.product.id, comment.id),class: "comment-destroy", method: :delete, data: { turbolinks: false} do
+                  = link_to top_comment_path(comment.product.id, comment.id),class: "comment-destroy", method: :delete, data: { turbolinks: false} do
                     %i.fas.fa-trash-alt
         
         %p.noticeMsg
           相手のことを考え丁寧なコメントを心がけましょう。
           %br
           不快な言葉遣いなどは利用制限や退会処分となることがあります。
-          -#コメント機能実装時に使用
-      -# - if current_user
-      -#   = form_for [@product,@comment] do |c|
-      -#     =c.text_area :comment,class:"comment_body"
-      -#     =c.submit 'コメントする',class:"commitBtn"
-          -# - else
-          -#   .not-comment
-          -#     コメントはできません  
-
-        -# %form#new_comment.new_comment{action: "/tops/#{@product.id}/comments", method: "post"}
-        -#   %textarea#comment_body{name: 'comment[body]', required: 'required'}
-        -#   %p.noticeMsg
-        -#     相手のことを考え丁寧なコメントを心がけましょう
-        -#     %br
-        -#     不快な言葉などは利用制限や退会処分となることがあります
-        -#   %br
-        -#   %button.commitBtn{name: 'button', type: 'submit'}
-        -#     %i.fa.fa-comment
-        -#     コメントする
-      -# .container
-      -#   - if current_user
-      -#     = form_with(model: [@product, @comment], local: true) do |form|
-      -#       = form.text_area :text, placeholder: "コメントする", rows: "2"
-      -#       = form.submit "SEND"
-      -#   - else
-      -#     %strong
-      -#       %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
-      -#   .comments
-      -#     %h4 ＜コメント一覧＞
-      -#     - if @comments
-      -#       - @comments.each do |comment|
-      -#         %p
-      -#           %strong
-      -#             = link_to comment.user.nickname, "/users/#{comment.user_id}"
-      -#             ：
-      -#           = comment.text
+       
+        .container
+        - if current_user
+          = form_with(model: [@product, @comment],url:top_comments_path(@product), method: :post, local: true,) do |form|
+            = form.text_area :comment, placeholder: "コメントする",size: "70x4"
+            = form.submit 'コメントする', class: "btn"
+        - else
+          %strong
+            %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
 
     %ul.links
       %li
