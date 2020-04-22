@@ -36,8 +36,7 @@ class CardsController < ApplicationController
   end
 
   def show
-    card = Card.find_by(user_id: current_user.id)
-    if card.blank?
+    if @card.blank?
       redirect_to new_card_path 
     else
       Payjp.api_key = Rails.application.credentials[:PAYJP_PRIVATE_KEY]
