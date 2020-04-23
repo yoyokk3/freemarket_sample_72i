@@ -63,8 +63,8 @@ class TopsController < ApplicationController
   private
   def product_params
     params.require(:product).permit(:name, :price, :status, :description, :sending,
-                                    :sending_cost, :user_id, :categories_id, :brand_id,
-                                    :exhibition_status,:purchaser_id,
+                                    :send_cost, :user_id, :categories_id, :brands_id,
+                                    :exhibition_status,:purchaser_id, :shippings_id,
                                     images_attributes: [:image, :_destroy, :id]).merge(user_id:current_user.id)
   end
 
