@@ -55,17 +55,21 @@
               %th 商品の状態
               %td 
                 =@product.status
+                %tn (1.新品　2.良　３.可)
+                  
             %tr
               %th 配送料の負担
               %td 
                 =@product.send_cost
-            %tr
-              %th 発送元の地域
-              %td
-                = link_to '兵庫県', '#'
+                %tn (1.送料込み（出品者が負担）2.送料別（購入者が負担）)
             %tr
               %th 発送日の目安
-              %td 即日発送
+              %td
+                =@product.sending
+            %tr
+              %th 配送方法
+              %td 
+                =@product.shippings_id
       .optionalArea
         %ul
           %li#likeBtn.optionalBtn.likeBtn
