@@ -1,76 +1,78 @@
-%section.buyMain
-  .buyMain__content
-    .topContent
-      %ul.productInfo
-        %li.productImg
-          = image_tag 'top/birdCute.jpeg', alt: 'BirdCute', class: 'itemBox__image__main1'
-          %ul.productInfo__detail
-            %li.productInfo__detail__name
-              = @product.name
-            %li.productInfo__detail__price
-              = @product.price
-            %li.productInfo__detail__sendCost
-              %span
-                %i.fas.fa-truck-moving
-                送料込み｜出品者負担
-      .payInfo
-        .row 支払い方法
-        -# 競合起きるか実験
-        .table
-          %table
-            %tr
-              %th フリマポイント
-              %td 
-                10ポイント
-                %br
-                保有ポイント：50
-            %tr
-              %th 支払い方法
-              %td クレジットカード
-        .paymentInfo
-          .row2
-            .col1 商品金額
-            .col1_right
-              = "#{@product.price.to_s}円"
-          .row3
-            .col2 決済手数料
-            .col2_right 0円
-          .row4
-            .col3 支払金額
-            .col3_right
-              = "#{@product.price.to_s}円"
-            -# .buy-price-table__right
-            -#   = "¥#{@product.price.to_s}"
-          .buy-content__user-info
-            .buy-content__user-info__inner
-              %h3 支払方法
-              .user-info-update
-                = link_to "変更する", "#", calss:"update-btn"
-              .user-info-text
-              - if @default_card_information.blank?
-                %br /
-              - else
-                = "**** **** **** " + "#{@default_card_information.last4}"
-                %br
-                - exp_month = @default_card_information.exp_month.to_s
-                - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-                = "有効期限 " + exp_month + " / " + exp_year
-                %br
+-# %section.buyMain
+-#   .buyMain__content
+-#     .topContent
+-#       %ul.productInfo
+-#         %li.productImg
+-#           = image_tag 'top/birdCute.jpeg', alt: 'BirdCute', class: 'itemBox__image__main1'
+-#           %ul.productInfo__detail
+-#             %li.productInfo__detail__name
+-#               = @product.name
+-#             %li.productInfo__detail__price
+-#               = @product.price
+-#             %li.productInfo__detail__sendCost
+-#               %span
+-#                 %i.fas.fa-truck-moving
+-#                 送料込み｜出品者負担
+-#       .payInfo
+-#         .row 支払い方法
+-#         -# 競合起きるか実験
+-#         .table
+-#           %table
+-#             %tr
+-#               %th フリマポイント
+-#               %td 
+-#                 10ポイント
+-#                 %br
+-#                 保有ポイント：50
+-#             %tr
+-#               %th 支払い方法
+-#               %td クレジットカード
+-#         .paymentInfo
+-#           .row2
+-#             .col1 商品金額
+-#             .col1_right
+-#               = "#{@product.price.to_s}円"
+-#           .row3
+-#             .col2 決済手数料
+-#             .col2_right 0円
+-#           .row4
+-#             .col3 支払金額
+-#             .col3_right
+-#               = "#{@product.price.to_s}円"
+-#             -# .buy-price-table__right
+-#             -#   = "¥#{@product.price.to_s}"
+-#           .buy-content__user-info
+-#             .buy-content__user-info__inner
+-#               %h3 支払方法
+-#               .user-info-update
+-#                 = link_to "変更する", "#", calss:"update-btn"
+-#               .user-info-text
+-#               - if @default_card_information.blank?
+-#                 %br /
+-#               - else
+-#                 = "**** **** **** " + "#{@default_card_information.last4}"
+-#                 %br
+-#                 - exp_month = @default_card_information.exp_month.to_s
+-#                 - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+-#                 = "有効期限 " + exp_month + " / " + exp_year
+-#                 %br
 
-      .sendingInfo
-        .col4 配送先住所
-        %ul.col5
-          %li.addressPostalCode 〒 111-2222
-          %li.address 埼玉県の真ん中らへん
-          %li.addressName 加藤 陽 様
-        .row  配送先情報
-        %ul.col6
-          %li.sendingInfoDetail 普通郵便
-          %li.sendingCost
-            %span
-              %i.fas.fa-truck-moving
-              送料込み｜出品者負担
-          %li.sendingDay 発送までの目安：支払い確定後 2 ~ 3日後
-      .formInfo
-        = form_tag(action: :pay, method: :post) do
-          %button.buy-button{type:"submit"} 購入する
+-#       .sendingInfo
+-#         .col4 配送先住所
+-#         %ul.col5
+-#           %li.addressPostalCode 〒 111-2222
+-#           %li.address 埼玉県の真ん中らへん
+-#           %li.addressName 加藤 陽 様
+-#         .row  配送先情報
+-#         %ul.col6
+-#           %li.sendingInfoDetail 普通郵便
+-#           %li.sendingCost
+-#             %span
+-#               %i.fas.fa-truck-moving
+-#               送料込み｜出品者負担
+-#           %li.sendingDay 発送までの目安：支払い確定後 2 ~ 3日後
+-#       .formInfo
+-#         = form_tag(action: :pay, method: :post) do
+-#           %button.buy-button{type:"submit"} 購入する
+
+テスト
