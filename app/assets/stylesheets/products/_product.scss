@@ -49,6 +49,30 @@
         }
       }
     }
+    .js-file_group{
+      margin-right: 100px;
+      display: flex;
+      .img_upload{
+        margin-top: 7px;
+        span{
+          font-size: 20px;
+          border: solid 1px #77EEFF;
+          padding: 10px;
+          border-radius: 30px;
+          background-color: #DDFFFF;
+        }
+        input{
+          display: none;
+        }
+      }
+      span{
+        border: solid 1px #77EEFF;
+        background-color: #DDFFFF;
+        padding: 7px;
+        border-radius: 30px;
+        font-size: 20px;
+      }
+    }
 
 
   }

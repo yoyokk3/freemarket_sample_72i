@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     end
     resources :comments, only: [:create, :destroy]
   end
+  post 'tops/:id' => 'tops#update'
   resources :categories,only: :index
   resources :users, only: :new
 
