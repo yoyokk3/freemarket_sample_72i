@@ -18,7 +18,6 @@ $(document).on('turbolinks:load', ()=> {
     return html;
   }
 
-
   // file_fieldのnameに動的なindexをつける為の配列
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
   // 既に使われているindexを除外
@@ -64,4 +63,51 @@ $(document).on('turbolinks:load', ()=> {
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
+
+
+  $(function() {
+    $('#new_product').on('submit', function(e){
+      flag = 0;
+      if(document.getElementById('product_images_attributes_0_image').value == "" ){
+        flag = 6;
+      }
+      if(document.getElementById('product_price').value == "" ){
+        flag = 5;
+      }
+      if(document.getElementById('product_sending').value == "" ){
+        flag = 4;
+      }
+      if(document.getElementById('category_select').value == "" ){
+        flag = 3;
+      }
+      if(document.getElementById('product_description').value == "" ){
+        flag = 2;
+      }
+      if(document.getElementById('product_name').value == "" ){
+        flag = 1;
+      }
+      if(flag == 1){
+        window.alert( '商品名を入力してください。' );
+        return false;
+      }else if(flag == 2){
+        window.alert( '商品説明を入力してください。' );
+        return false;
+      }else if(flag == 3){
+        window.alert( 'カテゴリーを選んでください。' );
+        return false;
+      }else if(flag == 4){
+        window.alert( '発送日の目安を入力してください。' );
+        return false;
+      }else if(flag == 5){
+        window.alert( '商品の値段を入力してください。' );
+        return false;
+      }else if(flag == 6){
+        window.alert( '商品の画像を最低1枚入力してください。' );
+        return false;
+      }else{
+        return true;
+      }
+    });
+  });
+
 });
