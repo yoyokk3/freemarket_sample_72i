@@ -2,7 +2,7 @@ class CardsController < ApplicationController
 
   def new
     card = Card.where(user_id: current_user.id)
-    redirect_to action: "show" if card.exists?
+    redirect_to card_path(current_user.id) if card.exists?
   end
 
 
@@ -25,7 +25,9 @@ class CardsController < ApplicationController
   end
 
   def destroy 
-    if @card.present?
+    card = Card.find_by(user_id: current_user.id)
+    if card.blank?
+    else
       Payjp.api_key = Rails.application.credentials[:PAYJP_PRIVATE_KEY]
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
