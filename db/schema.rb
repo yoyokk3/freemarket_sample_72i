@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 2020_04_09_084733) do
     t.integer "price", null: false
     t.integer "status", null: false
     t.text "description", null: false
-    t.integer "sending", null: false
+    t.string "sending", null: false
     t.integer "send_cost"
     t.integer "exhibition_status", null: false
     t.bigint "user_id"
