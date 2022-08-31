@@ -89,7 +89,7 @@ group :development, :test do
   gem 'high_voltage'
 end
 
-gem 'omniauth', '~>1.9.1'
+gem 'omniauth', '~>1.9.2'
 gem 'omniauth-facebook', ' ~> 4.0.0'
 gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
